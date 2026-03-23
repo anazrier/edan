@@ -1,73 +1,492 @@
-/* Container Utama */
-.elearning-container { display: flex; flex-direction: column; gap: 25px; }
+/* =========================
+   CONTAINER UTAMA
+========================= */
 
-/* Banner Hero */
+.elearning-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BANNER HERO
+========================= */
+
 .el-banner {
     background: linear-gradient(135deg, #2b44b0, #1e3288);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    box-shadow: 0 4px 10px rgba(43, 68, 176, 0.2);
+    box-shadow: 0 4px 10px rgba(43, 68, 176, 0.20);
 }
-.el-banner-text h2 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
-.el-banner-text p { font-size: 14px; opacity: 0.9; }
-.el-banner-illustration { font-size: 60px; }
 
-/* Grid Dua Kolom (Kiri & Kanan) */
-.el-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 25px; }
-.el-section-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.el-banner-text h2 {
+    font-size: 24px;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
 
-/* Kartu Mata Kuliah (Kolom Kiri) */
-.el-course-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+.el-banner-text p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.92;
+}
+
+.el-banner-illustration {
+    font-size: 60px;
+    line-height: 1;
+}
+
+
+/* =========================
+   JUDUL SECTION
+========================= */
+
+.el-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+
+/* =========================
+   GRID KONTEN UTAMA
+========================= */
+
+.el-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.el-left-col,
+.el-right-col {
+    min-width: 0;
+}
+
+
+/* =========================
+   CARD MATA KULIAH
+========================= */
+
+.el-course-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.el-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .el-card {
-    background: #fff; border-radius: 10px; padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03); border: 1px solid #f0f0f0;
+    background: #fff;
+    border-radius: 18px;
+    padding: 24px;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
 }
+
+.el-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
 .el-card-img {
-    height: 80px; border-radius: 8px; margin-bottom: 15px;
-    display: flex; justify-content: center; align-items: center; font-size: 35px;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    transition: transform 0.3s ease;
 }
-.img-blue { background: #e8eff6; }
-.img-green { background: #eaf5ee; }
-.img-yellow { background: #fff5e6; }
 
-.el-card-title { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 5px; }
-.el-card-subtitle { font-size: 12px; color: #888; margin-bottom: 15px; }
+.el-card:hover .el-card-img {
+    transform: scale(1.05);
+}
 
-/* Progress Bar */
-.el-progress { background: #eee; height: 6px; border-radius: 5px; margin-bottom: 10px; overflow: hidden; }
-.el-progress-bar { height: 100%; border-radius: 5px; }
-.bar-blue { background: #2b44b0; }
-.bar-green { background: #28a745; }
-.bar-yellow { background: #ffc107; }
+.img-blue {
+    background: #e8eff6;
+}
 
-/* Statistik Bawah Card */
-.el-card-stats { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: #777; }
-.stat-blue { color: #2b44b0; }
-.stat-green { color: #28a745; }
-.stat-yellow { color: #d39e00; }
+.img-green {
+    background: #eaf5ee;
+}
 
-/* Daftar Deadline Tugas (Kolom Kanan) */
-.el-right-col { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; height: fit-content; }
-.el-task-list { display: flex; flex-direction: column; gap: 15px; }
-.el-task-item { display: flex; align-items: center; gap: 15px; padding-bottom: 15px; border-bottom: 1px dashed #eee; }
-.el-task-item:last-child { border-bottom: none; padding-bottom: 0; }
-.el-task-icon { width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 12px; background: #f9f9f9; }
-.el-task-info { flex: 1; }
-.el-task-info h4 { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 3px; }
-.el-task-info p { font-size: 11px; color: #888; }
-.el-task-badge { font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 12px; white-space: nowrap; }
+.img-yellow {
+    background: #fff5e6;
+}
 
-/* Warna Badge */
-.text-red { background: #fcebeb; color: #dc3545; }
-.text-yellow { background: #fff8e5; color: #d39e00; }
-.text-blue { background: #e8eff6; color: #2b44b0; }
+.el-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f3f93;
+    margin: 0 0 6px;
+}
 
-/* Responsive Mobile */
-@media (max-width: 992px) {
-    .el-grid { grid-template-columns: 1fr; } 
-    .el-banner { flex-direction: column; text-align: center; gap: 20px; }
+.el-card-subtitle {
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 16px;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.el-progress {
+    background: #eee;
+    height: 6px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.el-progress-bar {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.bar-blue {
+    background: #2b44b0;
+}
+
+.bar-green {
+    background: #28a745;
+}
+
+.bar-yellow {
+    background: #ffc107;
+}
+
+
+/* =========================
+   STATISTIK CARD
+========================= */
+
+.el-card-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+}
+
+.stat-blue {
+    color: #2b44b0;
+}
+
+.stat-green {
+    color: #28a745;
+}
+
+.stat-yellow {
+    color: #d39e00;
+}
+
+
+/* =========================
+   KOLOM KANAN / DEADLINE
+========================= */
+
+.el-right-col {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    height: fit-content;
+}
+
+.el-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.el-task-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.el-task-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.el-task-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    background: #f9f9f9;
+    flex-shrink: 0;
+}
+
+.el-task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.el-task-info h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px;
+}
+
+.el-task-info p {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+
+.el-task-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 9px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+
+/* Badge warna */
+
+.text-red {
+    background: #fcebeb;
+    color: #dc3545;
+}
+
+.text-yellow {
+    background: #fff8e5;
+    color: #d39e00;
+}
+
+.text-blue {
+    background: #e8eff6;
+    color: #2b44b0;
+}
+
+
+/* =========================
+   KALENDER
+========================= */
+
+.el-calendar-section {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.el-calendar {
+    background: #fff;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #425b7a;
+    border-bottom: 1px solid #e9edf3;
+}
+
+.cal-nav {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #6f7f95;
+    padding: 0 8px;
+    line-height: 1;
+}
+
+.cal-nav:hover {
+    color: #1a3283;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.cal-grid:first-of-type {
+    padding: 8px 24px 0;
+}
+
+.cal-day-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8a97ab;
+    padding: 10px 0 14px;
+}
+
+#calDays {
+    padding: 8px 24px 20px;
+    row-gap: 8px;
+}
+
+.cal-date {
+    position: relative;
+    min-height: 42px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #4e647f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-sizing: border-box;
+}
+
+.cal-date.empty {
+    visibility: hidden;
+}
+
+.cal-date.has-dot::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: 4px;
+    display: block;
+}
+
+.cal-date.dot-red-event::after {
+    background: #ef5350;
+}
+
+.cal-date.dot-blue-event::after {
+    background: #3f5fc9;
+}
+
+.cal-date.dot-green-event::after {
+    background: #1aa36f;
+}
+
+.cal-today {
+    width: 40px;
+    height: 40px;
+    background: #4a63c7;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.cal-legend {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 14px 24px;
+    font-size: 13px;
+    color: #66768c;
+    border-top: 1px solid #e9edf3;
+    background: #fff;
+    flex-wrap: wrap;
+}
+
+.cal-legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-red {
+    background: #ef5350;
+}
+
+.dot-blue {
+    background: #3f5fc9;
+}
+
+.dot-green {
+    background: #1aa36f;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .el-grid {
+        grid-template-columns: 1fr;
+    }
+    .el-course-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .el-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .el-course-cards {
+        grid-template-columns: 1fr;
+    }
+    .cal-header,
+    .cal-grid:first-of-type,
+    #calDays,
+    .cal-legend {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .cal-day-name,
+    .cal-date {
+        font-size: 12px;
+    }
 }

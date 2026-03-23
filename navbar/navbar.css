@@ -1,18 +1,74 @@
-.navbar-content { display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 25px; }
-.menu-btn { background: none; border: none; font-size: 24px; cursor: pointer; display: none; color: #333; }
-.nav-right { display: flex; align-items: center; gap: 20px; }
-.user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-.avatar { width: 35px; height: 35px; background: #e74a3b; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; }
-.user-info { display: flex; flex-direction: column; }
-.user-info .name { font-weight: 700; font-size: 14px; color: #333; }
-.user-info .role { font-size: 11px; color: #888; }
-
-@media (max-width: 768px) {
-    .menu-btn { display: block; }
-    .user-info { display: none; } /* Sembunyikan teks nama di HP biar rapi */
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 25px;
 }
 
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background: #e74a3b;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info .name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-info .role {
+    font-size: 11px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    .user-info {
+        display: none;
+    }
+    /* Sembunyikan teks nama di HP biar rapi */
+}
+
+
 /* Tambahkan ini di bagian bawah */
+
 .dropdown-icon {
     font-size: 10px;
     color: #888;
@@ -22,7 +78,9 @@
     transition: transform 0.2s ease;
 }
 
+
 /* Opsional: Efek saat profil di-hover, segitiganya sedikit turun */
+
 .user-profile:hover .dropdown-icon {
     transform: translateY(2px);
     color: #333;

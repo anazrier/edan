@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Learning Dashboard</title>
-    
+
     <link rel="stylesheet" href="./global.css">
     <link rel="stylesheet" href="./content/e-learning/sidebar/sidebar.css">
     <link rel="stylesheet" href="./navbar/navbar.css">
-    
+
     <link rel="stylesheet" href="./content/e-learning/index/index.css">
 </head>
+
 <body>
 
     <div class="app-container">
@@ -24,13 +26,16 @@
     </div>
 
     <script src="./script.js"></script>
-   <script>
-    // Memanggil Sidebar KHUSUS E-Learning
-    loadComponent('sidebar-container', 'content/e-learning/sidebar/sidebar.html');
-    
-    // Navbar dan Konten tetap
-    loadComponent('navbar-container', 'navbar/navbar.html');
-    loadComponent('content-container', 'content/e-learning/index/index.html');
-</script>
+    <script>
+        // Memanggil Sidebar KHUSUS E-Learning
+        loadComponent('sidebar-container', 'content/e-learning/sidebar/sidebar.html');
+
+        // Navbar dan Konten tetap
+        loadComponent('navbar-container', 'navbar/navbar.html');
+        loadComponent('content-container', 'content/e-learning/index/index.html');
+    </script>
+    <script src="content/e-learning/sidebar/sidebar.js"></script>
+    <script src="content/e-learning/index/index.js"></script>
 </body>
+
 </html>

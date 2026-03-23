@@ -1,0 +1,241 @@
+.assignment-page {
+    background: #eef2f3;
+    padding: 28px 26px 40px;
+    min-height: 100vh;
+}
+
+
+/* header */
+
+.assignment-header {
+    background: #f8f9fa;
+    border: 1px solid #cfd7dc;
+    border-radius: 24px;
+    padding: 26px 30px;
+    margin-bottom: 16px;
+}
+
+.assignment-header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #2e5678;
+    margin-bottom: 0;
+}
+
+
+/* box */
+
+.assignment-box {
+    background: #f8f9fa;
+    border: 1px solid #cfd7dc;
+    border-radius: 24px;
+    padding: 24px 28px;
+}
+
+
+/* title */
+
+.assignment-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a3283;
+    margin-bottom: 16px;
+}
+
+
+/* badge waktu — scoped ke .assignment-box */
+
+.assignment-box .badge-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.assignment-box .badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.assignment-box .badge-label {
+    background: #1a3283;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.assignment-box .badge-time {
+    background: #2f54d0;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+
+/* button — scoped ke .assignment-box */
+
+.assignment-box .done-btn {
+    border: 1px solid #2f54d0;
+    background: transparent;
+    color: #2f54d0;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 14px;
+}
+
+.assignment-box .done-btn:hover {
+    background: #eef6fb;
+}
+
+.submit-link {
+    display: inline-block;
+    background: #d6dbe0;
+    color: #223746;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-link:hover {
+    background: #c8d0d7;
+}
+
+
+/* divider — scoped ke .assignment-box */
+
+.assignment-box .divider {
+    border: none;
+    border-top: 1px solid #cfd7dc;
+    margin: 16px 0;
+}
+
+
+/* subtitle */
+
+.sub-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e5678;
+    margin-bottom: 12px;
+}
+
+
+/* table */
+
+
+/* =========================
+   TABLE SUBMISSION (IMPROVED)
+========================= */
+
+.status-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 12px;
+    font-size: 14px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #d6dee3;
+}
+
+
+/* cell umum */
+
+.status-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e6edf2;
+}
+
+
+/* hilangkan border terakhir */
+
+.status-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* kolom kiri */
+
+.status-table td:first-child {
+    width: 260px;
+    background: #eef2f4;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+
+/* sudut kiri atas */
+
+.status-table tr:first-child td:first-child {
+    border-top-left-radius: 16px;
+}
+
+
+/* sudut kanan atas */
+
+.status-table tr:first-child td:last-child {
+    border-top-right-radius: 16px;
+}
+
+
+/* sudut kiri bawah */
+
+.status-table tr:last-child td:first-child {
+    border-bottom-left-radius: 16px;
+}
+
+
+/* sudut kanan bawah */
+
+.status-table tr:last-child td:last-child {
+    border-bottom-right-radius: 16px;
+}
+
+
+/* comments */
+
+.comments-link {
+    color: #2f54d0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.comments-link:hover {
+    text-decoration: underline;
+}
+
+
+/* submission */
+
+.submission-action {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.submit-btn {
+    background: #d6dbe0;
+    border: none;
+    padding: 10px 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-btn:hover {
+    background: #c8d0d7;
+}
+
+.submission-note {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #444;
+}

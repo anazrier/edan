@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Eureka</title>
-    
+
     <link rel="stylesheet" href="./global.css">
     <link rel="stylesheet" href="./navbar/navbar.css">
-    
+
     <link rel="stylesheet" href="./content/eureka/sidebar/sidebar.css">
     <link rel="stylesheet" href="./content/eureka/dashboard/dashboard.css">
 </head>
+
 <body>
 
     <div class="app-container">
@@ -24,11 +26,14 @@
     </div>
 
     <script src="./script.js"></script>
+
     <script>
         // INI YANG BARU: Alamat HTML untuk Sidebar dan Konten Eureka
         loadComponent('sidebar-container', 'content/eureka/sidebar/sidebar.html');
         loadComponent('navbar-container', 'navbar/navbar.html');
         loadComponent('content-container', 'content/eureka/dashboard/dashboard.html');
     </script>
+
 </body>
+
 </html>

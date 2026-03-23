@@ -17,3 +17,24 @@ function toggleMenu() {
     const sidebar = document.getElementById('sidebar-container');
     sidebar.classList.toggle('active');
 }
+const notifBtn = document.getElementById("notifBtn");
+const notifPopup = document.getElementById("notifPopup");
+
+if (notifBtn && notifPopup) {
+    notifBtn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        notifPopup.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function() {
+        notifPopup.classList.remove("show");
+    });
+
+    notifPopup.addEventListener("click", function(e) {
+        e.stopPropagation();
+    });
+}
+
+function toggleMenu() {
+    console.log("Menu diklik");
+}

@@ -5,60 +5,68 @@
             <p>Kerjakan tugas tugas mu yaaa. Terus semangat!</p>
         </div>
         <div class="el-banner-illustration">
-            📚🎓 
+            📚🎓
         </div>
     </div>
 
     <div class="el-grid">
-        
+
         <div class="el-left-col">
             <h3 class="el-section-title">Mata Kuliah</h3>
-            
+
             <div class="el-course-cards">
-                <div class="el-card">
-                    <div class="el-card-img img-blue">🐍</div>
-                    <h4 class="el-card-title">Python</h4>
-                    <p class="el-card-subtitle">Pemrograman - Budi</p>
-                    <div class="el-progress">
-                        <div class="el-progress-bar bar-blue" style="width: 72%;"></div>
-                    </div>
-                    <div class="el-card-stats">
-                        <span class="stat-blue">72% selesai</span>
-                        <span>18/25 modul</span>
-                    </div>
-                </div>
 
-                <div class="el-card">
-                    <div class="el-card-img img-green">🎨</div>
-                    <h4 class="el-card-title">UI/UX Design</h4>
-                    <p class="el-card-subtitle">Desain - Siti Rahma</p>
-                    <div class="el-progress">
-                        <div class="el-progress-bar bar-green" style="width: 45%;"></div>
+                <a href="matakuliah.html" class="el-card-link">
+                    <div class="el-card">
+                        <div class="el-card-img img-blue">🐍</div>
+                        <h4 class="el-card-title">Python</h4>
+                        <p class="el-card-subtitle">Pemrograman - Budi</p>
+                        <div class="el-progress">
+                            <div class="el-progress-bar bar-blue" style="width: 72%;"></div>
+                        </div>
+                        <div class="el-card-stats">
+                            <span class="stat-blue">72% selesai</span>
+                            <span>18/25 modul</span>
+                        </div>
                     </div>
-                    <div class="el-card-stats">
-                        <span class="stat-green">45% selesai</span>
-                        <span>9/20 modul</span>
-                    </div>
-                </div>
+                </a>
 
-                <div class="el-card">
-                    <div class="el-card-img img-yellow">📊</div>
-                    <h4 class="el-card-title">Analisis Data</h4>
-                    <p class="el-card-subtitle">Bisnis - Dani Pratama</p>
-                    <div class="el-progress">
-                        <div class="el-progress-bar bar-yellow" style="width: 30%;"></div>
+                <a href="matakuliah.html" class="el-card-link">
+                    <div class="el-card">
+                        <div class="el-card-img img-green">🎨</div>
+                        <h4 class="el-card-title">UI/UX Design</h4>
+                        <p class="el-card-subtitle">Desain - Siti Rahma</p>
+                        <div class="el-progress">
+                            <div class="el-progress-bar bar-green" style="width: 45%;"></div>
+                        </div>
+                        <div class="el-card-stats">
+                            <span class="stat-green">45% selesai</span>
+                            <span>9/20 modul</span>
+                        </div>
                     </div>
-                    <div class="el-card-stats">
-                        <span class="stat-yellow">30% selesai</span>
-                        <span>6/20 modul</span>
+                </a>
+
+                <a href="matakuliah.html" class="el-card-link">
+                    <div class="el-card">
+                        <div class="el-card-img img-yellow">📊</div>
+                        <h4 class="el-card-title">Analisis Data</h4>
+                        <p class="el-card-subtitle">Bisnis - Dani Pratama</p>
+                        <div class="el-progress">
+                            <div class="el-progress-bar bar-yellow" style="width: 30%;"></div>
+                        </div>
+                        <div class="el-card-stats">
+                            <span class="stat-yellow">30% selesai</span>
+                            <span>6/20 modul</span>
+                        </div>
                     </div>
-                </div>
+                </a>
+
             </div>
         </div>
 
         <div class="el-right-col">
             <h3 class="el-section-title">📅 Deadline Tugas</h3>
-            
+
             <div class="el-task-list">
                 <div class="el-task-item">
                     <div class="el-task-icon bg-red">🔴</div>
@@ -90,4 +98,32 @@
         </div>
 
     </div>
+    <!-- Kalender -->
+    <div class="el-calendar-section">
+        <h3 class="el-section-title">🗓️ Kalender</h3>
+        <div class="el-calendar">
+            <div class="cal-header">
+                <button class="cal-nav" onclick="changeMonth(-1)">&#8249;</button>
+                <span id="calTitle"></span>
+                <button class="cal-nav" onclick="changeMonth(1)">&#8250;</button>
+            </div>
+            <div class="cal-grid">
+                <div class="cal-day-name">Sen</div>
+                <div class="cal-day-name">Sel</div>
+                <div class="cal-day-name">Rab</div>
+                <div class="cal-day-name">Kam</div>
+                <div class="cal-day-name">Jum</div>
+                <div class="cal-day-name">Sab</div>
+                <div class="cal-day-name">Min</div>
+            </div>
+            <div class="cal-grid" id="calDays"></div>
+            <div class="cal-legend">
+                <span><span class="dot dot-red"></span> Deadline</span>
+                <span><span class="dot dot-blue"></span> Jadwal</span>
+                <span><span class="dot dot-green"></span> Selesai</span>
+            </div>
+        </div>
+    </div>
+
+
 </div>

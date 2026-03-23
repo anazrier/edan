@@ -1,13 +1,26 @@
 <div class="sidebar-content">
     <div class="sidebar-header">
-        <div class="logo-box">M</div>
-        <h4>Mazer</h4>
+        <h4>Edutrack</h4>
     </div>
-    
+
     <p class="menu-label">Menu</p>
     <ul class="sidebar-menu">
-        <li><a href="#" class="active">🗂️ Dashboard</a></li>
-        <li><a href="#">📖 Mata Kuliah</a></li>
+        <li><a href="e-learning.html" class="active">🗂️ Dashboard</a></li>
+
+        <li class="dropdown-item">
+            <button class="dropdown-btn" onclick="toggleMatkulDropdown()">
+        <span class="dropdown-left">
+            <span class="dropdown-icon">📖</span>
+            <span>Mata Kuliah</span>
+        </span>
+    </button>
+
+            <ul class="dropdown-menu" id="matkulDropdown">
+                <li><a href="matakuliah.html">Python</a></li>
+                <li><a href="matakuliah.html">Analisis Data</a></li>
+                <li><a href="matakuliah.html">UI UX Design</a></li>
+            </ul>
+        </li>
     </ul>
 
     <p class="menu-label" style="margin-top: 20px;">Pengaturan</p>

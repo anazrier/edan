@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mata Kuliah</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="content/e-learning/sidebar/sidebar.css">
+    <link rel="stylesheet" href="navbar/navbar.css">
+    <link rel="stylesheet" href="content/e-learning/matakuliah/matkul.css">
+</head>
+
+<body>
+    <aside id="sidebar-container" class="sidebar-container"></aside>
+
+    <div class="main-wrapper">
+        <header id="navbar-container" class="navbar-container"></header>
+        <main id="content-container" class="content-container"></main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        loadComponent('sidebar-container', 'content/e-learning/sidebar/sidebar.html');
+        loadComponent('navbar-container', 'navbar/navbar.html');
+        loadComponent('content-container', 'content/e-learning/matakuliah/matkul.html');
+    </script>
+</body>
+
+</html>
