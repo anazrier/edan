@@ -1,11 +1,117 @@
-.sidebar-content { padding: 20px 0; height: 100%; display: flex; flex-direction: column; }
-.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 0 20px 30px; margin-bottom: 10px; }
-.logo-box { width: 35px; height: 35px; background: #2b44b0; color: #fff; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px;}
-.sidebar-header h4 { color: #2b44b0; font-size: 22px; font-weight: 700;}
+:root {
+    /* Latar Belakang */
+    --soft-cloud: #F9FAFB;       
+    --clean-white: #FFFFFF;      
+    
+    /* Warna Brand & Aksen */
+    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
+    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
+    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --edu-orange-hover: #D66D0F;
+    
+    /* Warna Teks (Tipografi) */
+    --deep-ink: #111827;         
+    --slate-gray: #64748B;       
+    
+    /* Status & Indikator */
+    --emerald-green: #10B981;    
+    --vivid-rose: #F43F5E;       
+}
 
-.menu-label { padding: 0 20px; font-size: 12px; color: #888; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;}
+.sidebar-content { 
+    padding: 20px 0; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: var(--clean-white); /* Latar putih bersih */
+    border-right: 1px solid #E2E8F0; /* Garis pemisah dengan area materi */
+}
 
-.sidebar-menu { list-style: none; }
+.sidebar-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 0 20px 30px; 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #E2E8F0; /* Garis bawah agar rapi */
+}
+
+/* Identitas Modul E-Learning (Bentuk Kotak Membulat) */
+.logo-box { 
+    width: 40px; 
+    height: 40px; 
+    background-color: var(--edu-navy); /* Tosca UNIBI */
+    color: var(--clean-white); 
+    border-radius: 10px; /* Sudut membulat modern */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-weight: 800; 
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(21, 76, 121, 0.3); 
+}
+
+.sidebar-header h4 { 
+    color: var(--deep-ink); /* Teks judul warna gelap */
+    font-size: 1.25rem; 
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.menu-label { 
+    padding: 0 20px; 
+    font-size: 0.75rem; 
+    color: #94A3B8; /* Abu-abu sekunder */
+    margin-bottom: 10px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; /* Jarak antar huruf agar elegan */
+    font-weight: 700;
+}
+
+.sidebar-menu { 
+    list-style: none; 
+    padding: 0;
+    margin-bottom: 20px;
+}
+
 /* Margin kiri kanan agar saat aktif bentuknya kotak membulat, bukan full layar */
-.sidebar-menu li a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #555; text-decoration: none; font-weight: 600; transition: 0.2s; margin: 0 15px; border-radius: 8px;}
-.sidebar-menu li a:hover, .sidebar-menu li a.active { background: #2b44b0; color: #fff; }
+.sidebar-menu li a { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    padding: 12px 20px; 
+    color: var(--slate-gray); /* Teks menu tidak aktif */
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: all 0.2s ease; 
+    margin: 0 15px 5px; 
+    border-radius: 10px; /* Serasi dengan logo-box */
+}
+
+/* Tambahan: Styling ikon bawaan menu */
+.sidebar-menu li a i {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-menu li a.active { 
+    /* Menggunakan tosca transparan agar tidak menabrak warna solid logo */
+    background-color: rgba(21, 76, 121, 0.08);
+    color: var(--edu-navy); 
+}
+/* Efek saat menu disorot (hover) atau sedang aktif */
+.sidebar-menu li a:hover {
+    background-color: rgba(21, 76, 121, 0.05); 
+    color: var(--edu-navy); 
+    /* Mengangkat menu sedikit ke atas */
+    transform: translateY(-2px); 
+    /* Memberikan bayangan Navy yang sangat lembut */
+    box-shadow: 0 6px 12px rgba(21, 76, 121, 0.12);
+} 
+
+/* Tambahan: Ikon sedikit membesar saat menu aktif/di-hover */
+.sidebar-menu li a:hover i, 
+.sidebar-menu li a.active i { 
+    transform: scale(1.15); 
+}

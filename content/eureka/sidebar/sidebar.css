@@ -1,27 +1,124 @@
-/* Styling Utama Sidebar */
-.sidebar-content { padding: 20px 0; height: 100%; display: flex; flex-direction: column; }
-.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 0 20px 30px; margin-bottom: 10px; border-bottom: 1px solid #eee; }
-.logo-circle { width: 35px; height: 35px; background: #0056b3; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px;}
-.sidebar-header h4 { color: #333; font-size: 18px; font-weight: 700;}
+:root {
+    /* Latar Belakang */
+    --soft-cloud: #F9FAFB;       
+    --clean-white: #FFFFFF;      
+    
+    /* Warna Brand & Aksen */
+    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
+    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
+    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --edu-orange-hover: #D66D0F;
+    
+    /* Warna Teks (Tipografi) */
+    --deep-ink: #111827;         
+    --slate-gray: #64748B;       
+    
+    /* Status & Indikator */
+    --emerald-green: #10B981;    
+    --vivid-rose: #F43F5E;       
+}
+
+.sidebar-content { 
+    padding: 20px 0; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: var(--clean-white); 
+    border-right: 1px solid #E2E8F0; /* Garis pemisah halus dengan konten utama */
+}
+
+.sidebar-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 0 20px 30px; 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #E2E8F0; 
+}
+
+/* Lingkaran Logo di Kiri Atas */
+.logo-circle { 
+    width: 40px; 
+    height: 40px; 
+    background-color: var(--edu-navy); /* Menggunakan Tosca UNIBI */
+    color: var(--clean-white); 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-weight: 800; 
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(21, 76, 121, 0.3); 
+}
+
+.sidebar-header h4 { 
+    color: var(--deep-ink); 
+    font-size: 1.25rem; 
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
 
 /* Styling Menu List */
-.sidebar-menu { list-style: none; margin-bottom: 15px; }
-.sidebar-menu li a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #555; text-decoration: none; font-weight: 600; transition: 0.2s; border-radius: 8px; margin: 0 15px; }
-.sidebar-menu li a:hover, .sidebar-menu li a.active { background: #eef2f7; color: #0056b3; }
+.sidebar-menu { 
+    list-style: none; 
+    margin-bottom: 20px; 
+    padding: 0; /* Mereset bawaan HTML agar rata kiri */
+}
+
+.sidebar-menu li a { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    padding: 12px 20px; 
+    color: var(--slate-gray); /* Warna teks menu tidak aktif */
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: all 0.2s ease; 
+    border-radius: 10px; /* Sudut lebih membulat */
+    margin: 0 15px 5px; /* Spasi antar menu */
+}
+
+/* Ikon bawaan menu */
+.sidebar-menu li a i {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-menu li a.active { 
+    /* Latar belakang transparan warna Tosca (Alpha 8%) */
+    background-color: rgba(21, 76, 121, 0.08); 
+    color: var(--edu-navy); 
+}
+/* Efek Hover dan Menu Aktif (Yang Sedang Dibuka) */
+.sidebar-menu li a:hover {
+    background-color: rgba(21, 76, 121, 0.05); 
+    color: var(--edu-navy); 
+    /* Mengangkat menu sedikit ke atas (2px) */
+    transform: translateY(-2px); 
+    /* Memberikan bayangan Navy yang sangat lembut di sekelilingnya */
+    box-shadow: 0 6px 12px rgba(21, 76, 121, 0.12);
+} 
+
+/* Animasi ikon membesar sedikit saat di-hover */
+.sidebar-menu li a:hover i,
+.sidebar-menu li a.active i {
+    transform: scale(1.15);
+}
 
 /* Styling untuk Teks Pengelompokan (Muted Text) */
 .menu-label { 
     padding: 0 25px; 
-    font-size: 11px; 
-    color: #888; 
-    margin-top: 15px; 
-    margin-bottom: 5px; 
+    font-size: 0.75rem; 
+    color: #94A3B8; /* Warna abu-abu yang lebih terang dari menu biasa */
+    margin-top: 20px; 
+    margin-bottom: 10px; 
     text-transform: uppercase; 
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-weight: 700;
 }
 
-/* Penyesuaian jarak label pertama */
+/* Penyesuaian jarak label pertama agar tidak terlalu jauh dari header */
 .sidebar-header + .menu-label {
     margin-top: 0;
 }

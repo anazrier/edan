@@ -1,73 +1,235 @@
+:root {
+    /* Latar Belakang */
+    --soft-cloud: #F9FAFB;       
+    --clean-white: #FFFFFF;      
+    
+    /* Warna Brand & Aksen */
+    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
+    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
+    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --edu-orange-hover: #D66D0F;
+    
+    /* Warna Teks (Tipografi) */
+    --deep-ink: #111827;         
+    --slate-gray: #64748B;       
+    
+    /* Status & Indikator */
+    --emerald-green: #10B981;    
+    --vivid-rose: #F43F5E;       
+}
 /* Container Utama */
-.elearning-container { display: flex; flex-direction: column; gap: 25px; }
+.elearning-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; /* Jarak sedikit diperlebar agar tidak sesak */
+}
 
-/* Banner Hero */
+/* Banner Hero (Gradasi Tosca UNIBI ke Ocean Blue) */
 .el-banner {
-    background: linear-gradient(135deg, #2b44b0, #1e3288);
-    border-radius: 12px;
-    padding: 30px;
+    background: linear-gradient(135deg, var(--edu-navy));
+    border-radius: 1rem; /* Sudut lebih membulat */
+    padding: 2.5rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    box-shadow: 0 4px 10px rgba(43, 68, 176, 0.2);
+    color: var(--clean-white);
+    box-shadow: 0 10px 25px rgb(21, 76, 121); /* Bayangan tosca yang elegan */
 }
-.el-banner-text h2 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
-.el-banner-text p { font-size: 14px; opacity: 0.9; }
-.el-banner-illustration { font-size: 60px; }
+
+.el-banner-text h2 { 
+    font-size: 1.8rem; 
+    margin-bottom: 0.5rem; 
+    font-weight: 800; 
+    letter-spacing: -0.5px;
+}
+
+.el-banner-text p { 
+    font-size: 1rem; 
+    color: rgba(255, 255, 255, 0.9); /* Putih sedikit transparan */
+    margin: 0;
+}
+
+.el-banner-illustration { 
+    font-size: 4.5rem; /* Ikon diperbesar sedikit sebagai vokal poin */
+}
 
 /* Grid Dua Kolom (Kiri & Kanan) */
-.el-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 25px; }
-.el-section-title { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.el-grid { 
+    display: grid; 
+    grid-template-columns: 2.2fr 1fr; 
+    gap: 30px; 
+}
+
+.el-section-title { 
+    font-size: 1.1rem; 
+    font-weight: 800; 
+    color: var(--deep-ink); 
+    margin-bottom: 1.5rem; 
+    border-bottom: 2px solid #E2E8F0; /* Garis bawah dipertebal sedikit */
+    padding-bottom: 0.8rem; 
+}
 
 /* Kartu Mata Kuliah (Kolom Kiri) */
-.el-course-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+.el-course-cards { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px; 
+}
+
 .el-card {
-    background: #fff; border-radius: 10px; padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03); border: 1px solid #f0f0f0;
+    background-color: var(--clean-white); 
+    border-radius: 1rem; 
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(0,0,0,0.04); 
+    border: 1px solid #E2E8F0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* Efek interaktif kartu saat disorot */
+.el-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
 .el-card-img {
-    height: 80px; border-radius: 8px; margin-bottom: 15px;
-    display: flex; justify-content: center; align-items: center; font-size: 35px;
+    height: 90px; 
+    border-radius: 0.75rem; 
+    margin-bottom: 1.2rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 2.5rem;
 }
-.img-blue { background: #e8eff6; }
-.img-green { background: #eaf5ee; }
-.img-yellow { background: #fff5e6; }
 
-.el-card-title { font-size: 15px; font-weight: 700; color: #333; margin-bottom: 5px; }
-.el-card-subtitle { font-size: 12px; color: #888; margin-bottom: 15px; }
+/* Warna latar untuk ikon mata kuliah (Soft & Transparan) */
+.img-teal { background-color: rgba(18, 179, 165, 0.1); color: var(--edu-navy); }
+.img-blue { background-color: rgba(14, 165, 233, 0.1); color: var(--edu-orange); }
+.img-green { background-color: rgba(16, 185, 129, 0.1); color: var(--emerald-green); }
+.img-rose { background-color: rgba(244, 63, 94, 0.1); color: var(--vivid-rose); }
 
-/* Progress Bar */
-.el-progress { background: #eee; height: 6px; border-radius: 5px; margin-bottom: 10px; overflow: hidden; }
-.el-progress-bar { height: 100%; border-radius: 5px; }
-.bar-blue { background: #2b44b0; }
-.bar-green { background: #28a745; }
-.bar-yellow { background: #ffc107; }
+.el-card-title { 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    color: var(--deep-ink); 
+    margin-bottom: 0.25rem; 
+}
+
+.el-card-subtitle { 
+    font-size: 0.85rem; 
+    color: var(--slate-gray); 
+    margin-bottom: 1.2rem; 
+}
+
+/* Progress Bar Belajar */
+.el-progress { 
+    background-color: #E2E8F0; 
+    height: 8px; /* Sedikit ditebalkan */
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+    overflow: hidden; 
+}
+
+.el-progress-bar { 
+    height: 100%; 
+    border-radius: 10px; 
+}
+
+/* Menggunakan variabel warna palet kita */
+.bar-teal { background-color: var(--edu-navy); }
+.bar-blue { background-color: var(--edu-orange); }
+.bar-green { background-color: var(--emerald-green); }
 
 /* Statistik Bawah Card */
-.el-card-stats { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: #777; }
-.stat-blue { color: #2b44b0; }
-.stat-green { color: #28a745; }
-.stat-yellow { color: #d39e00; }
+.el-card-stats { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: var(--slate-gray); 
+}
 
-/* Daftar Deadline Tugas (Kolom Kanan) */
-.el-right-col { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; height: fit-content; }
-.el-task-list { display: flex; flex-direction: column; gap: 15px; }
-.el-task-item { display: flex; align-items: center; gap: 15px; padding-bottom: 15px; border-bottom: 1px dashed #eee; }
-.el-task-item:last-child { border-bottom: none; padding-bottom: 0; }
-.el-task-icon { width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 12px; background: #f9f9f9; }
+.stat-teal { color: var(--edu-navy); }
+.stat-blue { color: var(--edu-orange); }
+.stat-green { color: var(--emerald-green); }
+
+/* ========================================= */
+/* Daftar Deadline Tugas (Kolom Kanan)       */
+/* ========================================= */
+
+.el-right-col { 
+    background-color: var(--clean-white); 
+    padding: 1.5rem; 
+    border-radius: 1rem; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+    border: 1px solid #E2E8F0; 
+    height: fit-content; 
+}
+
+.el-task-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.el-task-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    padding-bottom: 15px; 
+    border-bottom: 1px dashed #E2E8F0; 
+}
+
+.el-task-item:last-child { 
+    border-bottom: none; 
+    padding-bottom: 0; 
+}
+
+/* Ikon Tugas */
+.el-task-icon { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 1rem; 
+    background-color: var(--soft-cloud); 
+    color: var(--slate-gray);
+}
+
 .el-task-info { flex: 1; }
-.el-task-info h4 { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 3px; }
-.el-task-info p { font-size: 11px; color: #888; }
-.el-task-badge { font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 12px; white-space: nowrap; }
 
-/* Warna Badge */
-.text-red { background: #fcebeb; color: #dc3545; }
-.text-yellow { background: #fff8e5; color: #d39e00; }
-.text-blue { background: #e8eff6; color: #2b44b0; }
+.el-task-info h4 { 
+    font-size: 0.95rem; 
+    font-weight: 700; 
+    color: var(--deep-ink); 
+    margin-bottom: 2px; 
+}
+
+.el-task-info p { 
+    font-size: 0.75rem; 
+    color: var(--slate-gray); 
+    margin: 0;
+}
+
+/* Badge Deadline (Modern Pill) */
+.el-task-badge { 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    padding: 0.3rem 0.6rem; 
+    border-radius: 2rem; 
+    white-space: nowrap; 
+    letter-spacing: 0.5px;
+}
+
+/* Warna Badge menggunakan variasi Opacity */
+.text-red { background-color: rgba(244, 63, 94, 0.15); color: var(--vivid-rose); }
+.text-yellow { background-color: rgba(245, 158, 11, 0.15); color: #D97706; /* Amber khusus peringatan */ }
+.text-teal { background-color: rgba(18, 179, 165, 0.15); color: var(--edu-navy); }
 
 /* Responsive Mobile */
 @media (max-width: 992px) {
     .el-grid { grid-template-columns: 1fr; } 
-    .el-banner { flex-direction: column; text-align: center; gap: 20px; }
+    .el-banner { flex-direction: column; text-align: center; gap: 20px; padding: 2rem; }
+    .el-banner-illustration { margin-top: 10px; }
 }

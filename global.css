@@ -1,24 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', sans-serif; }
+/* ========================================= */
+/* 1. PUSAT KENDALI WARNA (ROOT VARIABLES)   */
+/* ========================================= */
+/* PENTING: Semua warna dikendalikan dari sini */
+:root {
+    /* Latar Belakang */
+    --soft-cloud: #F9FAFB;       
+    --clean-white: #FFFFFF;      
+    
+    /* Warna Brand & Aksen */
+    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
+    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
+    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --edu-orange-hover: #D66D0F;
+    
+    /* Warna Teks (Tipografi) */
+    --deep-ink: #111827;         
+    --slate-gray: #64748B;       
+    
+    /* Status & Indikator */
+    --emerald-green: #10B981;    
+    --vivid-rose: #F43F5E;       
+}
 
-/* KEMBALIKAN FLEX KE BODY: Ini yang menyelamatkan file index.html lama kamu */
-body { background-color: #f8f9fc; overflow-x: hidden; display: flex; min-height: 100vh; width: 100%; }
+/* ========================================= */
+/* 2. PENGATURAN DASAR (RESET & TYPOGRAPHY)  */
+/* ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Nunito', sans-serif; 
+}
+
+/* Menerapkan warna latar abu-abu terang dan teks gelap */
+body { 
+    background-color: var(--soft-cloud); 
+    color: var(--deep-ink);
+    overflow-x: hidden; 
+    display: flex; 
+    min-height: 100vh; 
+    width: 100%; 
+}
+
+/* Mengubah gaya scrollbar agar terlihat modern */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--soft-cloud); }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* ========================================= */
+/* 3. LAYOUT UTAMA (APP, SIDEBAR, NAVBAR)    */
+/* ========================================= */
 
 /* App container untuk file yang baru (e-learning) */
-.app-container { display: flex; min-height: 100vh; width: 100%; }
+.app-container { 
+    display: flex; 
+    min-height: 100vh; 
+    width: 100%; 
+}
 
-/* Layout Grid Utama */
-.sidebar-container { width: 250px; background: #fff; transition: all 0.3s; z-index: 100; box-shadow: 2px 0 5px rgba(0,0,0,0.05); flex-shrink: 0; }
-.main-wrapper { flex: 1; display: flex; flex-direction: column; width: calc(100% - 250px); overflow: hidden; }
+/* Layout Grid Utama - Sidebar */
+.sidebar-container { 
+    width: 250px; 
+    background-color: var(--clean-white); 
+    transition: all 0.3s ease; 
+    z-index: 100; 
+    /* Mengganti shadow dengan garis batas halus khas Light Mode */
+    border-right: 1px solid #E2E8F0; 
+    flex-shrink: 0; 
+}
 
-/* Pengaturan Navbar dan Konten */
-.navbar-container { height: 70px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 99; flex-shrink: 0; }
-.content-container { padding: 25px; flex: 1; overflow-y: auto; }
+/* Wrapper untuk Navbar & Konten di sisi kanan */
+.main-wrapper { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    width: calc(100% - 250px); 
+    overflow: hidden; 
+}
 
-/* Responsive Mobile */
+/* Pengaturan Navbar */
+.navbar-container { 
+    height: 70px; 
+    background-color: var(--clean-white); 
+    /* Mengganti shadow dengan garis batas halus */
+    border-bottom: 1px solid #E2E8F0; 
+    z-index: 99; 
+    flex-shrink: 0; 
+}
+
+/* Area Konten Utama (Tempat Kartu & Banner Berada) */
+.content-container { 
+    padding: 30px; /* Diperlebar sedikit agar kartu punya ruang bernafas */
+    flex: 1; 
+    overflow-y: auto; 
+}
+
+/* ========================================= */
+/* 4. RESPONSIVE MOBILE                      */
+/* ========================================= */
 @media (max-width: 768px) {
-    .sidebar-container { position: fixed; height: 100vh; left: -250px; }
-    .sidebar-container.active { left: 0; }
-    .main-wrapper { width: 100%; }
+    .sidebar-container { 
+        position: fixed; 
+        height: 100vh; 
+        left: -250px; 
+        /* Saat di HP, sidebar melayang, jadi butuh bayangan (shadow) agar terpisah dari konten */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.05); 
+    }
+    .sidebar-container.active { 
+        left: 0; 
+    }
+    .main-wrapper { 
+        width: 100%; 
+    }
+    .content-container {
+        padding: 20px; /* Padding dikecilkan saat di layar HP */
+    }
 }

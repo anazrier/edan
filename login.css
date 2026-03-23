@@ -1,0 +1,187 @@
+/* Mengimplementasikan Palet Warna Light Mode */
+:root {
+    /* Latar Belakang */
+    --soft-cloud: #F9FAFB;       
+    --clean-white: #FFFFFF;      
+    
+    /* Warna Brand & Aksen */
+    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
+    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
+    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --edu-orange-hover: #D66D0F;
+    
+    /* Warna Teks (Tipografi) */
+    --deep-ink: #111827;         
+    --slate-gray: #64748B;       
+    
+    /* Status & Indikator */
+    --emerald-green: #10B981;    
+    --vivid-rose: #F43F5E;       
+}
+body {
+    background-color: var(--soft-cloud);
+    color: var(--deep-ink);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Container Utama */
+#auth {
+    min-height: 100vh;
+}
+
+/* Bagian Kiri (Form - Crisp & Clean) */
+#auth-left {
+    background-color: var(--clean-white);
+    height: 100vh;
+    padding: 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.03); /* Bayangan sangat halus */
+    position: relative;
+    z-index: 10;
+}
+
+.auth-logo {
+    margin-bottom: 2.5rem;
+}
+
+.auth-logo img {
+    height: 300px;        /* Mengatur tinggi ideal agar logo tidak raksasa */
+    width: auto;         /* Lebar menyesuaikan otomatis */
+    object-fit: contain; 
+    display: block;      
+}
+
+.auth-title {
+    color: var(--edu-navy);
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: var(--slate-gray);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+/* Input Styling */
+.form-control {
+    background-color: var(--clean-white);
+    border: 1px solid #E2E8F0;
+    color: var(--deep-ink);
+    padding: 1rem 1rem 1rem 3rem; 
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    background-color: var(--clean-white);
+    color: var(--deep-ink);
+    border-color: var(--edu-navy);
+    box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.15);
+}
+
+.form-control::placeholder {
+    color: #94A3B8;
+}
+
+/* Icon Styling di dalam Input */
+.form-control-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.2rem;
+    color: #94A3B8;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.form-group:focus-within .form-control-icon {
+    color: var(--edu-navy);
+}
+
+/* Checkbox & Text */
+.form-check-label {
+    color: var(--slate-gray);
+    cursor: pointer;
+}
+
+.form-check-input {
+    background-color: var(--clean-white);
+    border-color: #CBD5E1;
+}
+
+.form-check-input:checked {
+    background-color: var(--edu-navy);
+    border-color: var(--edu-navy);
+}
+
+/* Tombol Login */
+.btn-primary {
+    background-color: var(--edu-navy);
+    border: none;
+    color: var(--clean-white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--edu-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(21, 76, 121);
+}
+
+/* ========================================= */
+/* Bagian Kanan (Image Background + Overlay) */
+/* ========================================= */
+#auth-right {
+    background: linear-gradient(135deg, rgba(21, 76, 121), rgba(17, 24, 39, 0.7)), 
+                url('assets/images/gedung-unibi.png') center/cover; /* <--- GANTI DI SINI dengan path gambar UNIBI */
+                
+    /* Placeholder gambar sementara agar kamu bisa melihat efeknya langsung */
+     /* Gambar Gedung Kampus Anonim */
+
+    height: 100vh;
+    color: var(--clean-white); /* Semua teks di sisi ini harus PUTIH */
+    position: relative;
+}
+
+#auth-right .hero-text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--clean-white); /* Pastikan Judul Putih */
+}
+
+#auth-right .hero-text p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8); /* Putih sedikit transparan */
+    max-width: 80%;
+}
+
+.badge-competition {
+    /* Menyesuaikan badge agar terlihat bagus di atas background biru/gelap */
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--clean-white);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Responsiveness */
+@media (max-width: 991.98px) {
+    #auth-left {
+        padding: 2rem;
+        box-shadow: none;
+    }
+}
