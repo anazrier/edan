@@ -1,34 +1,144 @@
 <div class="dashboard-header">
-    <h2>Lorem Dashboard</h2>
+    <h2>Dashboard Akademik</h2>
+    <p class="dashboard-subtitle">Tahun Akademik 2025 / 2026 - Semester Genap</p>
 </div>
+
+<!-- warning kuliah -->
+
+<div class="upcoming-class-banner">
+    <div class="banner-left">
+        <div class="banner-icon-bg"><i class="fas fa-bell"></i></div>
+        <div class="banner-info">
+            <span class="banner-label">Kuliah Terdekat Hari Ini</span>
+            <h4 class="banner-subject">Struktur Data & Algoritma <span class="badge-ruang">📍 Lab Komputer 1</span></h4>
+        </div>
+    </div>
+    <div class="banner-right">
+        <div class="banner-time"><i class="far fa-clock"></i> 14:00 - 16:30 WIB</div>
+    </div>
+</div>
+
+<!-- 4 kotak -->
 
 <div class="card-grid">
-    <div class="card card-navy">
-        <p class="card-title">★ Lorem Ipsum</p>
-        <h3 class="card-value">3,93</h3>
-        <p class="card-desc">↗ Dolor sit amet</p>
+    <div class="card card-purple">
+        <p class="card-title"><i class="fas fa-graduation-cap"></i> IPK SEMENTARA</p>
+        <h3 class="card-value">4.00</h3>
+        <p class="card-desc">SKS Diambil: 20 <span class="float-right">Lulus: 20</span></p>
     </div>
-    <div class="card card-navy">
-        <p class="card-title">📄 Lorem Ipsum</p>
-        <h3 class="card-value">Rp 2.500.000</h3>
-        <p class="card-desc">Consectetur adipiscing</p>
+    
+    <div class="card card-blue">
+        <p class="card-title"><i class="fas fa-book-open"></i> TOTAL SKS</p>
+        <h3 class="card-value text-medium">20 SKS</h3>
+        <p class="card-desc">Batas Studi: 14 Semester</p>
     </div>
-    <div class="card card-orange">
-        <p class="card-title">🏆 Lorem Ipsum</p>
-        <h3 class="card-value">2</h3>
-        <p class="card-desc">Elit sed do eiusmod</p>
+    
+    <div class="card card-magenta">
+        <p class="card-title"><i class="fas fa-chalkboard-teacher"></i> DOSEN WALI</p>
+        <h3 class="card-value text-ellipsis">Venia Restreva D.</h3>
+        <p class="card-desc">S.Si.Kom., M.Si., M.Sc.</p>
     </div>
-    <div class="card card-orange">
-        <p class="card-title">📊 Lorem Ipsum</p>
-        <h3 class="card-value">20 SKS</h3>
-        <p class="card-desc">Tempor incididunt</p>
+    
+    <div class="card card-coral">
+        <p class="card-title"><i class="fas fa-language"></i> TOEFL</p>
+        <h3 class="card-value text-medium">Tersedia</h3>
+        <p class="card-desc"><a href="#" class="text-white-link"><i class="fas fa-download"></i> Download Hasil</a></p>
     </div>
+    
 </div>
 
-<div class="chart-section">
-    <h4>📈 Lorem Chart Ipsum</h4>
-    <div class="chart-placeholder">
-        <div class="chart-line"></div>
-        <div class="chart-warning-area">Lorem Warning Area</div>
+<div class="dashboard-content-grid">
+    
+    <div class="content-col left-col">
+        <div class="info-card warning-card">
+            <div class="card-header">
+                <h4>⚠️ Perlu Perhatian</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert-item">
+                    <span class="alert-date">Besok, 23:59 WIB</span>
+                    <div class="alert-details">
+                        <span class="alert-code">TGS-02</span>
+                        <span class="alert-text">Batas pengumpulan project UI/UX Web Development.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-card default-card">
+            <div class="card-header header-flex">
+                <h4>📢 Pengumuman Akademik</h4>
+                <a href="#" class="download-link"><i class="fas fa-list"></i> Lihat Semua</a>
+            </div>
+            <div class="card-body">
+                <ul class="announcement-list">
+                    <li>
+                        <span class="announcement-date">24 Mar 2026</span>
+                        <a href="#" class="announcement-title">Pendaftaran Kompetisi Tingkat Nasional Telah Dibuka</a>
+                        <p class="announcement-desc">Segera daftarkan tim kamu dan menangkan total hadiah puluhan juta rupiah.</p>
+                    </li>
+                    <li>
+                        <span class="announcement-date">20 Mar 2026</span>
+                        <a href="#" class="announcement-title">Jadwal Ujian Tengah Semester (UTS) Genap 2025/2026</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-col right-col">
+        
+        <div class="info-card default-card">
+            <div class="card-header">
+                <h4>📝 Tugas Terdekat</h4>
+            </div>
+            <div class="card-body task-body">
+                <div class="task-item">
+                    <div class="task-icon task-web"><i class="fas fa-code"></i></div>
+                    <div class="task-info">
+                        <p class="task-name">Slicing HTML & CSS</p>
+                        <p class="task-course">Pemrograman Web</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-icon task-db"><i class="fas fa-database"></i></div>
+                    <div class="task-info">
+                        <p class="task-name">Query Relasi Database</p>
+                        <p class="task-course">Basis Data Lanjut</p>
+                    </div>
+                </div>
+                <button class="btn-outline btn-full-width btn-small-mt">Lihat Semua Tugas</button>
+            </div>
+        </div>
+
+        <div class="info-card default-card">
+            <div class="card-header">
+                <h4>📅 Jadwal Hari Ini</h4>
+            </div>
+            <div class="card-body">
+                
+                <div class="schedule-item completed">
+                    <div class="schedule-time">
+                        08:00<br>10:30
+                    </div>
+                    <div class="schedule-info">
+                        <p class="schedule-course">Rekayasa Perangkat Lunak</p>
+                        <p class="schedule-room"><i class="fas fa-map-marker-alt"></i> Ruang B.201</p>
+                    </div>
+                </div>
+
+                <div class="schedule-item active">
+                    <div class="schedule-time">
+                        14:00<br>16:30
+                    </div>
+                    <div class="schedule-info">
+                        <p class="schedule-course">Struktur Data & Algoritma</p>
+                        <p class="schedule-room"><i class="fas fa-map-marker-alt"></i> Lab Komputer 1</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
