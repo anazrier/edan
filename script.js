@@ -20,35 +20,44 @@ async function loadComponent(id, url) {
 }
 
 // Fungsi toggle sidebar untuk Mobile
-function toggleMenu() {
-    const sidebar = document.getElementById('sidebar-container');
-    sidebar.classList.toggle('active');
-}
+// function toggleMenu() {
+//     const sidebar = document.getElementById('sidebar-container');
+//     const navbar = document.querySelector('.navbar-content');
+    
+//     if (sidebar) {
+//         sidebar.classList.toggle('active');
+//         // Jika kamu ingin navbar ikut bergeser dan tidak tertutup:
+//         // navbar.classList.toggle('sidebar-open'); 
+//     }
+// }
 
 // Menunggu sampai seluruh halaman dimuat
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Karena kamu pakai loadComponent, kita pakai event delegation 
-    // agar klik tombol tetap terbaca meskipun navbar dimuat belakangan
-    document.addEventListener('click', function(e) {
-        
-        // Cari apakah yang diklik adalah tombol menu (atau ikon di dalamnya)
-        const menuBtn = e.target.closest('#menu-toggle') || e.target.closest('.menu-btn');
-        
-        if (menuBtn) {
-            const sidebar = document.getElementById('sidebar-container');
-            
-            // Cek lebar layar (Mobile vs Desktop)
-            if (window.innerWidth <= 768) {
-                // Di HP: Munculkan / Sembunyikan sidebar secara utuh
-                sidebar.classList.toggle('active');
-            } else {
-                // Di Desktop/Laptop: Lipat sidebar jadi mode ikon
-                sidebar.classList.toggle('collapsed');
-            }
-        }
-    });
+// Gantikan blok document.addEventListener('DOMContentLoaded', ...) yang lama dengan ini:
 
+document.addEventListener('click', function(e) {
+    // 1. Deteksi apakah yang diklik adalah tombol menu burger (atau ikon di dalamnya)
+    const menuBtn = e.target.closest('#menu-toggle') || e.target.closest('.menu-btn');
+    const sidebar = document.getElementById('sidebar-container');
+    
+    // Jika tombol burger diklik
+    if (menuBtn && sidebar) {
+        if (window.innerWidth <= 768) {
+            // Mode HP: Munculkan / Sembunyikan sidebar
+            sidebar.classList.toggle('active');
+        } else {
+            // Mode Laptop/PC: Ciutkan / Lebarkan sidebar
+            sidebar.classList.toggle('collapsed');
+        }
+        return; // Hentikan eksekusi di sini agar tidak terdeteksi sebagai "klik di luar"
+    }
+
+    // 2. Fitur Tambahan: Tutup sidebar di HP jika klik area di luar sidebar
+    if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('active')) {
+        // Jika elemen yang diklik BUKAN bagian dari sidebar dan BUKAN tombol navbar
+        if (!sidebar.contains(e.target) && !e.target.closest('.navbar-content')) {
+            sidebar.classList.remove('active');
+        }
+    }
 });
 
 // Fungsi untuk ganti tab di halaman Biodata
@@ -89,3 +98,68 @@ function setActiveSidebar() {
         }
     });
 }
+
+// FUNGSI GLOBAL UNTUK SWEETALERT EDUTRACK
+function showEdutrackConfirm(title, text, iconType, confirmText, actionCallback) {
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: iconType, 
+        showCancelButton: true,
+        confirmButtonText: confirmText,
+        cancelButtonText: 'Batal',
+        buttonsStyling: false, 
+        customClass: {
+            popup: 'eureka-swal-popup',
+            title: 'eureka-swal-title',
+            confirmButton: 'eureka-btn-confirm',
+            cancelButton: 'eureka-btn-cancel'
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            actionCallback();
+        }
+    });
+}
+
+// MEMANTAU KLIK UNTUK TOMBOL YANG DIMUAT SECARA DINAMIS
+document.addEventListener('click', function(event) {
+    // Mengecek apakah elemen yang diklik memiliki class 'done-btn'
+    if (event.target && event.target.classList.contains('done-btn')) {
+        
+        const tombol = event.target;
+
+        // Mencegah pop-up muncul lagi jika tombol sudah berstatus selesai
+        if (tombol.disabled) return; 
+
+        // Memanggil fungsi Swal yang sudah kita buat sebelumnya
+        showEdutrackConfirm(
+            'Tandai Selesai?', 
+            'Apakah kamu yakin ingin menandai materi ini sebagai selesai dibaca?', 
+            'question', 
+            'Ya, Selesai', 
+            function() {
+                // 1. Munculkan Notifikasi Sukses
+                Swal.fire({ 
+                    title: 'Selesai!', 
+                    text: 'Progress belajar kamu sudah diperbarui.', 
+                    icon: 'success', 
+                    customClass: { 
+                        popup: 'eureka-swal-popup', 
+                        title: 'eureka-swal-title', 
+                        confirmButton: 'eureka-btn-confirm' 
+                    }, 
+                    buttonsStyling: false 
+                });
+
+                // 2. Ubah Tampilan Tombol Menjadi Hijau
+                tombol.innerHTML = '✔ Selesai';
+                tombol.style.backgroundColor = '#10B981'; /* Warna hijau */
+                tombol.style.color = 'white';
+                tombol.style.borderColor = '#10B981';
+                tombol.disabled = true; /* Matikan tombol agar tidak bisa diklik lagi */
+                tombol.style.cursor = 'not-allowed';
+            }
+        );
+    }
+});

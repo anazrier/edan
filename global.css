@@ -54,22 +54,39 @@ body {
 /* 3. LAYOUT UTAMA (APP, SIDEBAR, NAVBAR)    */
 /* ========================================= */
 
-/* App container untuk file yang baru (e-learning) */
 .app-container { 
     display: flex; 
     min-height: 100vh; 
     width: 100%; 
+    overflow-x: hidden; /* Mencegah scroll menyamping saat animasi */
 }
 
 /* Layout Grid Utama - Sidebar */
 .sidebar-container { 
     width: 250px; 
     background-color: var(--clean-white); 
-    transition: all 0.3s ease; 
+    /* INI KUNCI ANIMASI MULUSNYA */
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out; 
     z-index: 100; 
-    /* Mengganti shadow dengan garis batas halus khas Light Mode */
     border-right: 1px solid #E2E8F0; 
     flex-shrink: 0; 
+}
+
+/* --- MODE DESKTOP COLLAPSED --- */
+/* Jika kamu menekan tombol di Laptop/PC */
+.sidebar-container.collapsed {
+    width: 80px; /* Sidebar mengecil */
+}
+.sidebar-container.collapsed .sidebar-header h4,
+.sidebar-container.collapsed .menu-label,
+.sidebar-container.collapsed .sidebar-menu li span,
+.sidebar-container.collapsed .dropdown-btn span,
+.sidebar-container.collapsed .dropdown-btn i.fa-chevron-down {
+    display: none; /* Sembunyikan teks dengan cepat */
+}
+.sidebar-container.collapsed .sidebar-header {
+    padding: 0 15px 30px;
+    justify-content: center;
 }
 
 /* Wrapper untuk Navbar & Konten di sisi kanan */
@@ -77,23 +94,28 @@ body {
     flex: 1; 
     display: flex; 
     flex-direction: column; 
+    /* Lebar menyesuaikan sisa layar */
     width: calc(100% - 250px); 
+    /* TAMBAHKAN TRANSISI JUGA DI SINI AGAR TIDAK PATAH */
+    transition: width 0.4s ease-in-out; 
     overflow: hidden; 
 }
 
-/* Pengaturan Navbar */
+/* Jika sidebar mengecil, main-wrapper harus melebar mulus */
+.sidebar-container.collapsed ~ .main-wrapper {
+    width: calc(100% - 80px);
+}
+
 .navbar-container { 
     height: 70px; 
     background-color: var(--clean-white); 
-    /* Mengganti shadow dengan garis batas halus */
     border-bottom: 1px solid #E2E8F0; 
     z-index: 99; 
     flex-shrink: 0; 
 }
 
-/* Area Konten Utama (Tempat Kartu & Banner Berada) */
 .content-container { 
-    padding: 30px; /* Diperlebar sedikit agar kartu punya ruang bernafas */
+    padding: 30px; 
     flex: 1; 
     overflow-y: auto; 
 }
@@ -105,18 +127,26 @@ body {
     .sidebar-container { 
         position: fixed; 
         height: 100vh; 
-        left: -250px; 
-        /* Saat di HP, sidebar melayang, jadi butuh bayangan (shadow) agar terpisah dari konten */
+        left: -260px; /* Posisi awal di luar layar */
         box-shadow: 5px 0 15px rgba(0,0,0,0.05); 
+        z-index: 9999;
     }
+    
     .sidebar-container.active { 
-        left: 0; 
+        left: 0; /* Meluncur masuk dengan mulus */
     }
+    
     .main-wrapper { 
+        width: 100%; /* Di HP, main-wrapper mengambil layar penuh */
+    }
+    
+    /* Matikan fungsi collapsed desktop jika layar kecil */
+    .sidebar-container.collapsed ~ .main-wrapper {
         width: 100%; 
     }
+    
     .content-container {
-        padding: 20px; /* Padding dikecilkan saat di layar HP */
+        padding: 20px; 
     }
 }
 
@@ -131,4 +161,74 @@ body {
 * {
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+/* --- CUSTOM SWEETALERT EDUTRACK THEME --- */
+
+/* Desain Kotak Pop-up */
+.eureka-swal-popup {
+    background-color: #ffffff !important; 
+    border-radius: 16px !important;       
+    padding: 24px !important;
+    /* Bayangan pop-up dibuat sedikit kebiruan agar lebih menyatu dengan tema */
+    box-shadow: 0 10px 25px rgba(21, 76, 121, 0.15) !important; 
+    border: 1px solid #E2E8F0 !important;
+}
+
+/* Desain Judul */
+.eureka-swal-title {
+    color: #111827 !important; /* Warna Deep Ink Edutrack */
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+}
+
+/* Desain Teks/Deskripsi Bawaan Swal */
+.swal2-html-container {
+    color: #64748B !important; /* Warna Slate Gray Edutrack */
+    font-weight: 500 !important;
+}
+
+/* Desain Tombol Konfirmasi (Ya) - Memakai Warna Navy Edutrack */
+.eureka-btn-confirm {
+    background-color: #154C79; /* Biru Gelap Edutrack (Utama) */
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(21, 76, 121, 0.2);
+}
+
+.eureka-btn-confirm:hover {
+    background-color: #103A5C; /* Efek hover lebih gelap */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(21, 76, 121, 0.3);
+}
+
+/* Desain Tombol Batal */
+.eureka-btn-cancel {
+    background-color: #F9FAFB; /* Soft Cloud Edutrack */
+    color: #64748B;
+    border: 1px solid #E2E8F0;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.eureka-btn-cancel:hover {
+    background-color: #E2E8F0;
+    color: #111827;
+}
+
+/* Mengubah warna icon 'Warning' bawaan Swal menjadi Aksen Orange Edutrack */
+.swal2-icon.swal2-warning {
+    border-color: #F38118 !important;
+    color: #F38118 !important;
 }

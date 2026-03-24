@@ -19,7 +19,16 @@
             </div>
         </div>
 
-        <button class="done-btn">Mark as done</button>
+        <button type="button" class="done-btn" onclick="showEdutrackConfirm(
+            'Tandai Selesai?', 
+            'Apakah kamu yakin ingin menandai materi/tugas ini sebagai selesai dibaca?', 
+            'question', 
+            'Ya, Selesai', 
+            function() {
+                Swal.fire({ title: 'Selesai!', text: 'Progress belajar kamu sudah diperbarui.', icon: 'success', customClass: { popup: 'eureka-swal-popup', title: 'eureka-swal-title', confirmButton: 'eureka-btn-confirm' }, buttonsStyling: false });
+                // Catatan: Kamu bisa tambahkan logika JS di sini untuk mengubah warna tombol menjadi hijau setelah diklik
+            }
+        )">Mark as done</button>
 
         <hr class="divider">
 

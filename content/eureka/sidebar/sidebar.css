@@ -129,8 +129,13 @@
 
 /* 1. Mengubah lebar container sidebar saat dilipat */
 .sidebar-container {
-    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease; 
+    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
     overflow: hidden;
+    overflow-y: auto;
+    -webkit-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
+    -moz-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
+    -ms-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
+    -o-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
 }
 
 .sidebar-container.collapsed {
@@ -227,21 +232,31 @@
 /* ======================================================== */
 /* RESPONSIVE MOBILE (Layar HP)                             */
 /* ======================================================== */
+@media (min-width: 769px) {
+    /* Saat tombol burger diklik di desktop */
+    .sidebar-container.collapsed {
+        width: 80px; /* Sidebar mengecil */
+    }
+    
+    /* Sembunyikan teks menu saat sidebar mengecil, sisakan ikonnya saja */
+    .sidebar-container.collapsed .menu-text {
+        display: none; 
+    }
+}
+
+/* --- MODE MOBILE (Lebar layar 768px ke bawah) --- */
 @media (max-width: 768px) {
-    .sidebar-container { 
-        position: fixed; 
-        height: 100vh; 
-        left: -250px; /* Sembunyi ke kiri luar layar */
-        width: 250px !important; /* Di HP lebarnya tetap utuh, tidak ada mode collapse icon */
-        box-shadow: 5px 0 15px rgba(0,0,0,0.05); 
+    .sidebar-container {
+        position: fixed;
+        top: 0;
+        left: -260px; /* Sembunyikan sidebar ke luar layar kiri */
+        height: 100vh;
+        z-index: 9999;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
-    
-    /* Saat tombol menu diklik di HP, sidebar meluncur masuk */
-    .sidebar-container.active { 
-        left: 0; 
-    }
-    
-    .main-wrapper { 
-        width: 100% !important; 
+
+    /* Saat tombol burger diklik di mobile (Class 'active' ditambahkan) */
+    .sidebar-container.active {
+        left: 0; /* Geser masuk ke dalam layar */
     }
 }
