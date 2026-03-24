@@ -58,3 +58,28 @@ function tryRenderCalendar() {
 }
 
 tryRenderCalendar();
+
+function openAllCourses() {
+    document.getElementById('allCoursesModal').classList.add('active');
+    document.body.style.overflow = 'hidden'; // Stop scrolling background
+}
+
+function closeAllCourses() {
+    document.getElementById('allCoursesModal').classList.remove('active');
+    document.body.style.overflow = 'auto'; // Enable scrolling back
+}
+
+// Fungsi Cari Matkul di Modal
+function filterCourses() {
+    let input = document.getElementById('courseSearch').value.toLowerCase();
+    let cards = document.querySelectorAll('#modalCourseGrid .el-card');
+
+    cards.forEach(card => {
+        let title = card.querySelector('.el-card-title').innerText.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}

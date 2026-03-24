@@ -1,259 +1,305 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #eef3f7;
-    color: #2f4f66;
-}
-
-.course-page {
-    width: 100%;
-    padding: 20px;
-}
-
-.course-header {
-    background: #fff;
-    border: 1px solid #d9e1e7;
-    border-radius: 18px;
-    padding: 28px 30px;
-    margin-bottom: 20px;
-}
-
-.course-header h1 {
-    font-size: 38px;
-    font-weight: 500;
-    color: #3d5f78;
-    line-height: 1.2;
-}
-
-.course-box {
-    background: #fff;
-    border: 1px solid #d9e1e7;
-    border-radius: 18px;
-    padding: 30px 32px;
-    margin-bottom: 18px;
-}
-
-.course-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.course-item-title {
-    font-size: 18px;
-    color: #00a7b5;
-    font-weight: 500;
-}
-
-.course-progress {
-    font-size: 18px;
-    color: #1f2937;
-}
-
-.course-box hr {
-    border: none;
-    border-top: 1px solid #d9e1e7;
-    margin: 22px 0;
-}
-
-.course-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.item-title {
-    font-size: 18px;
-    color: #00a7b5;
-    font-weight: 500;
-}
-
-.done-btn {
-    padding: 10px 18px;
-    border: 1px solid #2b8dbd;
-    background: #fff;
-    color: #2b8dbd;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    white-space: nowrap;
-}
-
-.done-btn:hover {
-    background: #2b8dbd;
-    color: #fff;
-}
-
-.section-title {
-    background: #fff;
-    border: 1px solid #d9e1e7;
-    border-radius: 18px;
-    padding: 18px;
-    text-align: center;
-    margin-bottom: 18px;
-}
-
-.section-title h2 {
-    font-size: 34px;
-    color: #00a7b5;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.item-note {
-    margin-top: 18px;
-    font-size: 17px;
-    color: #111827;
-}
-
-@media (max-width: 768px) {
-    .course-header h1 {
-        font-size: 28px;
-    }
-    .course-item,
-    .course-top-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .done-btn {
-        align-self: flex-end;
-    }
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, sans-serif;
-}
-
-.course-page {
-    background: #f5f7f8;
-    padding: 20px;
-}
-
-
-/* HEADER */
-
-.course-header {
-    background: #ffffff;
-    border: 1px solid #d9dfe3;
-    padding: 24px;
-    margin-bottom: 16px;
-}
-
-.course-header h1 {
-    font-size: 26px;
-    font-weight: 500;
-    color: #36556b;
-}
-
-
-/* BOX */
-
-.course-box {
-    background: #ffffff;
-    border: 1px solid #d9dfe3;
-    padding: 18px 20px;
-    margin-bottom: 16px;
-}
-
-
-/* TOP ROW */
-
-.course-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
-}
-
-.course-item-title,
-.course-progress {
-    font-size: 16px;
-    color: #36556b;
-}
-
-
-/* DIVIDER */
-
-.divider {
-    border: none;
-    border-top: 1px solid #e3e7ea;
-    margin: 10px 0;
-}
-
-
-/* ITEM */
-
-.course-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-}
-
-.item-title {
-    font-size: 16px;
-    color: #2f4f64;
-}
-
-
-/* LINK */
-
-.link-tugas {
-    text-decoration: none;
-    color: #2a6384;
-    font-weight: 500;
-}
-
-.link-tugas:hover {
-    text-decoration: underline;
-}
-
-
-/* BUTTON */
-
-.done-btn {
-    border: 1px solid #8db2c8;
-    background: #ffffff;
-    color: #2a6384;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.done-btn:hover {
-    background: #f0f7fb;
-}
-
-
-/* SECTION */
-
-.section-title {
-    margin: 18px 0 10px;
-}
-
-.section-title h2 {
-    font-size: 20px;
-    font-weight: 500;
-    color: #36556b;
-}
-
-
-/* NOTE */
-
-.item-note {
-    margin-top: 6px;
-    font-size: 13px;
-    color: #6b7d8a;
-}
+        :root {
+           --bg-color: #f4f7fc;
+           --primary: #36556b;
+           --accent: #3a5ccc;
+           --unibi-blue: #2c3e92;
+           --text-muted: #94a3b8;
+           --success: #4ade80;
+           --gradient-header: linear-gradient(135deg, #2c3e92 0%, #3a5ccc 100%);
+       }
+       
+       body {
+           font-family: 'Segoe UI', sans-serif;
+           background-color: var(--bg-color);
+           margin: 0;
+       }
+       
+       .course-page-aesthetic {
+           padding: 25px;
+           max-width: 1200px;
+           margin: 0 auto;
+       }
+       /* --- HEADER --- */
+       
+       .header-aesthetic {
+           background: var(--gradient-header);
+           border-radius: 20px;
+           padding: 35px;
+           margin-bottom: 25px;
+           color: white;
+           box-shadow: 0 10px 20px rgba(44, 62, 146, 0.15);
+       }
+       
+       .progress-bar {
+           width: 200px;
+           height: 8px;
+           background: rgba(255, 255, 255, 0.2);
+           border-radius: 10px;
+           overflow: hidden;
+           margin-top: 10px;
+       }
+       
+       .progress-fill {
+           width: 40%;
+           height: 100%;
+           background: var(--success);
+           transition: 0.5s;
+       }
+       /* --- ANNOUNCEMENT --- */
+       
+       .announcement-box {
+           background: white;
+           border-radius: 18px;
+           padding: 25px;
+           border: 1px solid #d9dfe3;
+           margin-bottom: 25px;
+       }
+       
+       .ann-item {
+           display: flex;
+           align-items: center;
+           gap: 15px;
+           padding: 12px;
+           border-radius: 12px;
+           margin-bottom: 10px;
+           border: 1px solid #f0f0f0;
+       }
+       
+       .ann-item.urgent {
+           border-left: 5px solid #ffcc00;
+           background: #fffdf0;
+       }
+       
+       .ann-item.info {
+           border-left: 5px solid #3a5ccc;
+           background: #f0f4ff;
+       }
+       /* --- GRID BAWAH --- */
+       
+       .bottom-grid {
+           display: grid;
+           grid-template-columns: 1.2fr 0.8fr;
+           gap: 20px;
+           align-items: start;
+       }
+       
+       .course-box {
+           background: white;
+           border-radius: 18px;
+           padding: 22px;
+           border: 1px solid #d9dfe3;
+       }
+       
+       .box-label {
+           font-size: 12px;
+           font-weight: 700;
+           text-transform: uppercase;
+           color: #a0aec0;
+           margin-bottom: 15px;
+           display: flex;
+           align-items: center;
+           gap: 8px;
+       }
+       /* --- ITEM MATERI & TUGAS --- */
+       
+       .course-item {
+           background: #f8fafc;
+           border-radius: 14px;
+           margin-bottom: 12px;
+           border: 1px solid #f1f5f9;
+           overflow: hidden;
+           transition: 0.3s;
+           position: relative;
+       }
+       
+       .item-header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 15px;
+           cursor: pointer;
+       }
+       
+       .item-title {
+           font-size: 15px;
+           font-weight: 600;
+           color: var(--primary);
+       }
+       /* --- FLOATING DONE (MATERI) --- */
+       
+       .floating-done {
+           display: flex;
+           align-items: center;
+           gap: 8px;
+           cursor: pointer;
+       }
+       
+       .done-circle {
+           width: 20px;
+           height: 20px;
+           border-radius: 50%;
+           border: 2px solid var(--text-muted);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-size: 12px;
+           transition: 0.3s;
+       }
+       
+       .done-text {
+           font-size: 11px;
+           font-weight: 600;
+           color: var(--text-muted);
+       }
+       
+       .floating-done.is-done .done-circle {
+           background: var(--accent);
+           border-color: var(--accent);
+       }
+       
+       .floating-done.is-done .done-text {
+           color: var(--accent);
+       }
+       /* --- FILE CARDS --- */
+       
+       .file-card-group {
+           display: none;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 10px;
+           padding: 0 15px 15px;
+       }
+       
+       .course-item.active .file-card-group {
+           display: grid;
+       }
+       
+       .file-card {
+           background: white;
+           border: 1.5px solid #edf2f7;
+           border-radius: 12px;
+           padding: 12px 5px;
+           text-align: center;
+           text-decoration: none;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           transition: 0.2s;
+       }
+       
+       .file-card:hover {
+           border-color: var(--accent);
+           transform: translateY(-2px);
+       }
+       
+       .icon-placeholder {
+           font-size: 22px;
+           margin-bottom: 5px;
+       }
+       
+       .file-card span {
+           font-size: 10px;
+           color: var(--primary);
+           font-weight: 600;
+       }
+       /* --- TOMBOL TUGAS --- */
+       
+       .task-btn {
+           background: var(--unibi-blue);
+           color: white;
+           border: none;
+           padding: 8px 16px;
+           border-radius: 8px;
+           font-weight: 600;
+           cursor: pointer;
+           transition: 0.3s;
+       }
+       
+       .task-btn.submitted {
+           background: #ecfdf5;
+           color: #3a5ccc;
+           border: 1px solid #3a5ccc;
+           cursor: default;
+       }
+       /* --- MODAL --- */
+       
+       .modal-overlay {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: rgba(0, 0, 0, 0.5);
+           display: none;
+           justify-content: center;
+           align-items: center;
+           z-index: 1000;
+           backdrop-filter: blur(4px);
+       }
+       
+       .modal-overlay.active {
+           display: flex;
+       }
+       
+       .modal-content {
+           background: white;
+           width: 90%;
+           max-width: 450px;
+           border-radius: 20px;
+           padding: 25px;
+           animation: slideUp 0.3s ease;
+       }
+       
+       @keyframes slideUp {
+           from {
+               transform: translateY(20px);
+               opacity: 0;
+           }
+           to {
+               transform: translateY(0);
+               opacity: 1;
+           }
+       }
+       
+       .upload-area {
+           border: 2px dashed #cbd5e1;
+           border-radius: 15px;
+           padding: 30px;
+           text-align: center;
+           background: #f8fafc;
+           cursor: pointer;
+           margin: 20px 0;
+       }
+       
+       .modal-footer {
+           display: flex;
+           gap: 10px;
+       }
+       
+       .btn-primary {
+           flex: 1;
+           background: #3a5ccc;
+           color: white;
+           border: none;
+           padding: 12px;
+           border-radius: 10px;
+           font-weight: 600;
+           cursor: pointer;
+       }
+       
+       .btn-secondary {
+           flex: 1;
+           background: #f1f5f9;
+           color: var(--primary);
+           border: none;
+           padding: 12px;
+           border-radius: 10px;
+           font-weight: 600;
+           cursor: pointer;
+       }
+       
+       @media (max-width: 850px) {
+           .bottom-grid {
+               grid-template-columns: 1fr;
+           }
+       }
