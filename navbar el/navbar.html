@@ -1,22 +1,78 @@
 <div class="navbar-content">
+
     <div class="nav-left">
         <button id="menu-toggle" class="menu-btn">
-          
         </button>
     </div>
 
     <div class="nav-right">
+
         <div class="notification-icon" style="cursor: pointer; color: var(--slate-gray); font-size: 1.2rem; margin-right: 15px; transition: color 0.3s;">
             <i class="fas fa-bell"></i>
         </div>
 
-        <div class="user-profile">
-            <div class="avatar">S</div>
-            <div class="user-info">
-                <span class="name">Sendy Ramadhan</span>
-                <span class="role">Informatics - UNIBI</span>
+        <div class="nav-profile-container">
+
+            <div class="user-profile nav-profile-btn">
+                <div class="avatar nav-avatar-circle">S</div>
+                <div class="user-info nav-profile-info">
+                    <span class="name nav-name">Sendy Ramadhan</span>
+                    <span class="role nav-nim">Informatika - UNIBI</span>
+                </div>
+                <i class="fas fa-chevron-down dropdown-icon nav-chevron"></i>
             </div>
-            <i class="fas fa-chevron-down dropdown-icon"></i>
+
+            <div class="profile-dropdown-menu">
+
+                <div class="dropdown-header">
+                    <div class="dropdown-avatar-large">
+                        <span class="avatar-initial-large">S</span>
+                    </div>
+                    <div class="dropdown-header-info">
+                        <h4 class="dropdown-header-name">SENDY RAMADHAN</h4>
+                        <p class="dropdown-header-nim">125111000</p>
+                    </div>
+                    <div class="dropdown-lang">
+                        🇮🇩 <i class="fas fa-caret-down" style="font-size: 10px; color: #888;"></i>
+                    </div>
+                </div>
+
+                <div class="dropdown-info-grid">
+                    <div class="info-grid-item">
+                        <span class="info-label">Program Studi</span>
+                        <span class="info-value">Informatika (S1)</span>
+                    </div>
+                    <div class="info-grid-item">
+                        <span class="info-label">Angkatan</span>
+                        <span class="info-value">2025</span>
+                    </div>
+                    <div class="info-grid-item">
+                        <span class="info-label">Jenis Kelas</span>
+                        <span class="info-value">Reguler</span>
+                    </div>
+                    <div class="info-grid-item">
+                        <span class="info-label">Status</span>
+                        <span class="badge-status-aktif">Aktif</span>
+                    </div>
+                </div>
+
+                <div class="dropdown-periode-section">
+                    <span class="info-label">Periode</span>
+                    <span class="info-value">2025/2026 Genap</span>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <a href="javascript:void(0)" class="dropdown-action-item" onclick="tampilkanUbahSandi()">
+                    <i class="fas fa-pen action-icon"></i> Ubah Kata Sandi
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a href="#" class="dropdown-action-item text-danger">
+                    <i class="fas fa-sign-out-alt action-icon"></i> Keluar
+                </a>
+            </div>
         </div>
     </div>
 </div>

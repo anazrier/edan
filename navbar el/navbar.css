@@ -63,11 +63,7 @@
     .user-info {
         display: none;
     }
-    /* Sembunyikan teks nama di HP biar rapi */
 }
-
-
-/* Tambahkan ini di bagian bawah */
 
 .dropdown-icon {
     font-size: 12px;
@@ -78,9 +74,6 @@
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-
-/* Opsional: Efek saat profil di-hover, segitiganya sedikit turun */
-
 .user-profile:hover .dropdown-icon {
     transform: translateY(3px);
     color: var(--edu-orange);
@@ -90,10 +83,258 @@
     color: var(--edu-navy) !important;
 }
 
-/* Responsiveness untuk Layar HP */
 @media (max-width: 768px) {
-    .menu-btn { display: block; }
-    .user-info { display: none; } /* Menyembunyikan nama di HP agar rapi */
-    .dropdown-icon { display: none; } /* Ikon dropdown juga disembunyikan di HP */
-    .navbar-content { padding: 0 15px; }
+    .menu-btn {
+        display: block;
+    }
+    .user-info {
+        display: none;
+    }
+    .dropdown-icon {
+        display: none;
+    }
+    .navbar-content {
+        padding: 0 15px;
+    }
+}
+
+.nav-profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.nav-profile-btn:hover {
+    background: #f8f9fc;
+}
+
+.nav-avatar-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #e74a3b;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.nav-profile-info {
+    text-align: left;
+}
+
+.nav-name {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+
+.nav-nim {
+    margin: 0;
+    font-size: 11px;
+    color: #888;
+}
+
+.nav-chevron {
+    font-size: 12px;
+    color: #aaa;
+    transition: transform 0.2s;
+}
+
+.profile-dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    animation: fadeInDropdown 0.2s ease-out;
+}
+
+.nav-profile-container:hover .profile-dropdown-menu {
+    display: flex;
+}
+
+.nav-profile-container:hover .nav-chevron {
+    transform: rotate(180deg);
+}
+
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 20px 10px 20px;
+}
+
+.dropdown-avatar-large {
+    width: 50px;
+    height: 50px;
+    background-color: #e74a3b;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.dropdown-header-info {
+    flex: 1;
+}
+
+.dropdown-header-name {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+}
+
+.dropdown-header-nim {
+    margin: 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.dropdown-lang {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #f8f9fc;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.dropdown-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.info-grid-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 600;
+}
+
+.info-value {
+    font-size: 14px;
+    color: #333;
+}
+
+.badge-status-aktif {
+    background-color: #d1f3e0;
+    color: #0d8a43;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+    width: max-content;
+}
+
+.dropdown-periode-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 20px 15px 20px;
+}
+
+.pmb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2b6cb0;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: color 0.2s;
+}
+
+.pmb-link:hover {
+    color: #1a4971;
+}
+
+.pmb-icon {
+    font-size: 16px;
+}
+
+.dropdown-divider {
+    border-bottom: 1px dashed #e0e0e0;
+    margin: 0 20px;
+}
+
+.dropdown-action-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.dropdown-action-item:hover {
+    background-color: #f8fbff;
+}
+
+.action-icon {
+    font-size: 16px;
+    color: #666;
+}
+
+.text-danger {
+    color: #e74a3b;
+}
+
+.text-danger .action-icon {
+    color: #e74a3b;
+}
+
+.text-danger:hover {
+    background-color: #fceceb;
 }

@@ -13,7 +13,7 @@
 </div>
 
 <div id="tab-transkrip" class="krs-tab-content active">
-    
+
     <div class="krs-card krs-info-card">
         <div class="student-info-row">
             <div class="info-group">
@@ -32,22 +32,22 @@
                 <span class="info-label">IPK Kumulatif</span>
                 <strong class="info-value text-green">4.00 (Dengan Pujian)</strong>
             </div>
-            
+
             <div class="info-group dropdown-container dropdown">
-    <button class="btn-primary btn-sm-download" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn-primary btn-sm-download" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fas fa-download"></i> Unduh Transkrip <i class="fas fa-chevron-down chevron-icon"></i>
     </button>
-    
-    <div class="dropdown-menu shadow">
-        <a href="#" class="dropdown-item">Semua Semester</a>
-        <a href="#" class="dropdown-item">Semester Pilihan</a>
-    </div>
-</div>
+
+                <div class="dropdown-menu shadow">
+                    <a href="#" class="dropdown-item">Semua Semester</a>
+                    <a href="#" class="dropdown-item">Semester Pilihan</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="krs-grid">
-        
+
         <div class="krs-card">
             <div class="semester-header">
                 <h4 class="semester-title">Semester 1</h4>
@@ -730,7 +730,7 @@
         </div>
 
     </div>
-    
+
     <div class="krs-action-bar">
         <div class="action-info">
             <span class="total-sks-label">Total SKS Dipilih</span>
@@ -740,9 +740,33 @@
             <i class="fas fa-save"></i> Simpan Rencana Studi
         </button>
 
-        
+
 
     </div>
-    </div> 
-</div> 
 </div>
+</div>
+</div>
+<script>
+    document.addEventListener('click', function(e) {
+        const container = e.target.closest('.dropdown-container');
+        const menu = container ? container.querySelector('.dropdown-menu') : null;
+        const allMenus = document.querySelectorAll('.dropdown-menu');
+
+        // 1. Jika yang diklik adalah tombol dropdown
+        if (e.target.closest('.btn-sm-download')) {
+            const isShowing = menu.classList.contains('show');
+
+            // Tutup semua menu lain dulu
+            allMenus.forEach(m => m.classList.remove('show'));
+
+            // Kalau tadi tutup, sekarang buka
+            if (!isShowing) {
+                menu.classList.add('show');
+            }
+        }
+        // 2. Jika klik di luar area dropdown
+        else {
+            allMenus.forEach(m => m.classList.remove('show'));
+        }
+    });
+</script>
