@@ -179,6 +179,12 @@
     gap: 20px;
 }
 
+.form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 20px;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -248,9 +254,6 @@ label {
     font-weight: 600;
 }
 
-
-/* Aksi Form & Tombol */
-
 .form-actions {
     margin-top: 15px;
     display: flex;
@@ -278,8 +281,6 @@ label {
 }
 
 
-/* --- Sistem Tab & Akademik --- */
-
 .tab-content {
     display: none;
     animation: fadeIn 0.3s ease-in-out;
@@ -300,18 +301,12 @@ label {
     }
 }
 
-
-/* Input Khusus Read-Only */
-
 .text-read-only {
     background-color: #f8f9fc;
     border-color: #e3e6f0;
     color: #5a5c69;
     cursor: default;
 }
-
-
-/* Badge Status Aktif */
 
 .status-badge {
     padding: 10px 20px;
@@ -327,9 +322,6 @@ label {
     color: #28a745;
     border: 1px solid rgba(40, 167, 69, 0.2);
 }
-
-
-/* --- Tabel Modern (Sertifikasi) --- */
 
 .table-responsive {
     width: 100%;
@@ -369,9 +361,6 @@ label {
     background-color: #fafbfc;
 }
 
-
-/* Tombol Aksi Tabel */
-
 .action-btn {
     background: none;
     border: none;
@@ -397,18 +386,28 @@ label {
 .delete-btn:hover {
     background: #fceceb;
 }
-
-
-/* --- Media Queries Responsif --- */
+.form-control, textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
 
 @media (max-width: 992px) {
     .bio-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
-    .form-row {
-        grid-template-columns: 1fr;
+        .form-row, 
+    .form-row-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px;
     }
-    .bio-profile-card {
-        padding: 30px;
+    
+    .flex-group {
+        flex-direction: column !important;
+        gap: 15px;
+    }
+        .bio-profile-card,
+    .bio-form-card {
+        padding: 20px !important;
     }
 }

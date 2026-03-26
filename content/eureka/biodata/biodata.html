@@ -223,7 +223,7 @@
                     <textarea class="form-control" rows="3">Jl. Contoh Alamat No. 123</textarea>
                 </div>
                 
-                <div class="form-row" style="grid-template-columns: 1fr 1fr 2fr;">
+                <div class="form-row form-row-3">
                     <div class="form-group">
                         <label>RT</label>
                         <input type="text" value="001" class="form-control">
@@ -579,19 +579,3 @@
 
     </div>
 </div>
-
-<script>
-    function switchTab(tabId, btnElement) {
-        // Hapus class 'active' dari semua tombol tab
-        let buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(btn => btn.classList.remove('active'));
-        
-        // Hapus class 'active-tab' dari semua isi konten
-        let contents = document.querySelectorAll('.tab-content');
-        contents.forEach(content => content.classList.remove('active-tab'));
-        
-        // Tambahkan class 'active' ke tombol yang diklik dan konten yang sesuai
-        btnElement.classList.add('active');
-        document.getElementById(tabId).classList.add('active-tab');
-    }
-</script>
