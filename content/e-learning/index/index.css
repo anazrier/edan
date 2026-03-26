@@ -1,6 +1,4 @@
-/* =========================
-   CONTAINER UTAMA
-========================= */
+/* --- Wadah Utama --- */
 
 .elearning-container {
     width: 100%;
@@ -13,9 +11,7 @@
 }
 
 
-/* =========================
-   BANNER HERO
-========================= */
+/* --- Banner Selamat Datang --- */
 
 .el-banner {
     background: linear-gradient(135deg, #2b44b0, #1e3288);
@@ -46,9 +42,7 @@
 }
 
 
-/* =========================
-   JUDUL SECTION
-========================= */
+/* --- Judul Bagian --- */
 
 .el-section-title {
     font-size: 16px;
@@ -60,9 +54,7 @@
 }
 
 
-/* =========================
-   GRID KONTEN UTAMA
-========================= */
+/* --- Grid Utama --- */
 
 .el-grid {
     display: grid;
@@ -77,9 +69,7 @@
 }
 
 
-/* =========================
-   CARD MATA KULIAH
-========================= */
+/* --- Kartu Mata Kuliah --- */
 
 .el-course-cards {
     display: grid;
@@ -126,6 +116,9 @@
     transform: scale(1.05);
 }
 
+
+/* Warna Latar Ikon Kartu */
+
 .img-blue {
     background: #e8eff6;
 }
@@ -152,9 +145,7 @@
 }
 
 
-/* =========================
-   PROGRESS BAR
-========================= */
+/* --- Progress Bar --- */
 
 .el-progress {
     background: #eee;
@@ -182,9 +173,7 @@
 }
 
 
-/* =========================
-   STATISTIK CARD
-========================= */
+/* --- Statistik Kartu --- */
 
 .el-card-stats {
     display: flex;
@@ -209,9 +198,7 @@
 }
 
 
-/* =========================
-   KOLOM KANAN / DEADLINE
-========================= */
+/* --- Kolom Deadline --- */
 
 .el-right-col {
     background: #fff;
@@ -280,7 +267,7 @@
 }
 
 
-/* Badge warna */
+/* Warna Badge */
 
 .text-red {
     background: #fcebeb;
@@ -298,9 +285,7 @@
 }
 
 
-/* =========================
-   KALENDER
-========================= */
+/* --- Sistem Kalender --- */
 
 .el-calendar-section {
     margin-top: 8px;
@@ -310,12 +295,8 @@
 .el-calendar {
     background: #fff;
     border-radius: 16px;
-    padding: 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     border: 1px solid #f0f0f0;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
     overflow: hidden;
 }
 
@@ -383,6 +364,9 @@
 .cal-date.empty {
     visibility: hidden;
 }
+
+
+/* Indikator Titik Kalender */
 
 .cal-date.has-dot::after {
     content: "";
@@ -456,9 +440,7 @@
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* --- Mode Responsif --- */
 
 @media (max-width: 1100px) {
     .el-grid {
@@ -492,14 +474,13 @@
 }
 
 
-/* --- SECTION HEADER & VIEW ALL BTN --- */
+/* --- Header Section & Tombol Lihat Semua --- */
 
 .el-section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
-    /* Menempel ke title */
 }
 
 .view-all-btn {
@@ -520,7 +501,7 @@
 }
 
 
-/* --- MODAL OVERLAY VIEW --- */
+/* --- Modal Overlay --- */
 
 .modal-overlay {
     position: fixed;
@@ -529,7 +510,6 @@
     width: 100%;
     height: 100%;
     background: rgba(15, 23, 42, 0.6);
-    /* Warna slate gelap transparan */
     backdrop-filter: blur(8px);
     display: none;
     justify-content: center;
@@ -584,7 +564,7 @@
 }
 
 
-/* --- SEARCH IN MODAL --- */
+/* Pencarian Dalam Modal */
 
 .modal-search-wrapper {
     position: relative;
@@ -615,7 +595,7 @@
 }
 
 
-/* --- MODAL GRID --- */
+/* Grid Modal */
 
 .all-courses-grid {
     display: grid;
@@ -633,7 +613,7 @@
 }
 
 
-/* Notifikasi Tugas di dalam Modal */
+/* Notifikasi Tugas */
 
 .has-task {
     position: relative;

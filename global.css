@@ -1,197 +1,191 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-
-/* ========================================= */
-/* 1. PUSAT KENDALI WARNA (ROOT VARIABLES)   */
-/* ========================================= */
-/* PENTING: Semua warna dikendalikan dari sini */
 :root {
     /* Latar Belakang */
-    --soft-cloud: #F9FAFB;       
-    --clean-white: #FFFFFF;      
-    
+    --soft-cloud: #F9FAFB;
+    --clean-white: #FFFFFF;
     /* Warna Brand & Aksen */
-    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
-    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
-    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --edu-navy: #154C79;
+    /* Biru Gelap Edutrack (Utama) */
+    --edu-navy-hover: #103A5C;
+    /* Biru Gelap untuk efek Hover */
+    --edu-orange: #F38118;
+    /* Oranye Edutrack (Aksen/Tombol) */
     --edu-orange-hover: #D66D0F;
-    
     /* Warna Teks (Tipografi) */
-    --deep-ink: #111827;         
-    --slate-gray: #64748B;       
-    
+    --deep-ink: #111827;
+    --slate-gray: #64748B;
     /* Status & Indikator */
-    --emerald-green: #10B981;    
-    --vivid-rose: #F43F5E;       
+    --emerald-green: #10B981;
+    --vivid-rose: #F43F5E;
 }
 
-/* ========================================= */
-/* 2. PENGATURAN DASAR (RESET & TYPOGRAPHY)  */
-/* ========================================= */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Nunito', sans-serif; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
-/* Menerapkan warna latar abu-abu terang dan teks gelap */
-body { 
-    background-color: var(--soft-cloud); 
+
+/*  warna latar abu-abu terang dan teks gelap */
+
+body {
+    background-color: var(--soft-cloud);
     color: var(--deep-ink);
-    overflow-x: hidden; 
-    display: flex; 
-    min-height: 100vh; 
-    width: 100%; 
+    overflow-x: hidden;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
 }
 
-/* Mengubah gaya scrollbar agar terlihat modern */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--soft-cloud); }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 
-/* ========================================= */
-/* 3. LAYOUT UTAMA (APP, SIDEBAR, NAVBAR)    */
-/* ========================================= */
+/* scrollbar  */
 
-.app-container { 
-    display: flex; 
-    min-height: 100vh; 
-    width: 100%; 
-    overflow-x: hidden; /* Mencegah scroll menyamping saat animasi */
+::-webkit-scrollbar {
+    width: 8px;
 }
+
+::-webkit-scrollbar-track {
+    background: var(--soft-cloud);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+
+/*Laayout Utama*/
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 
 /* Layout Grid Utama - Sidebar */
-.sidebar-container { 
-    width: 250px; 
-    background-color: var(--clean-white); 
+
+.sidebar-container {
+    width: 250px;
+    background-color: var(--clean-white);
     /* INI KUNCI ANIMASI MULUSNYA */
-    transition: width 0.4s ease-in-out, left 0.4s ease-in-out; 
-    z-index: 100; 
-    border-right: 1px solid #E2E8F0; 
-    flex-shrink: 0; 
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+    z-index: 100;
+    border-right: 1px solid #E2E8F0;
+    flex-shrink: 0;
 }
 
-/* --- MODE DESKTOP COLLAPSED --- */
-/* Jika kamu menekan tombol di Laptop/PC */
 .sidebar-container.collapsed {
-    width: 80px; /* Sidebar mengecil */
+    width: 80px;
 }
+
 .sidebar-container.collapsed .sidebar-header h4,
 .sidebar-container.collapsed .menu-label,
 .sidebar-container.collapsed .sidebar-menu li span,
 .sidebar-container.collapsed .dropdown-btn span,
 .sidebar-container.collapsed .dropdown-btn i.fa-chevron-down {
-    display: none; /* Sembunyikan teks dengan cepat */
+    display: none;
 }
+
 .sidebar-container.collapsed .sidebar-header {
     padding: 0 15px 30px;
     justify-content: center;
 }
 
-/* Wrapper untuk Navbar & Konten di sisi kanan */
-.main-wrapper { 
-    flex: 1; 
-    display: flex; 
-    flex-direction: column; 
-    /* Lebar menyesuaikan sisa layar */
-    width: calc(100% - 250px); 
-    /* TAMBAHKAN TRANSISI JUGA DI SINI AGAR TIDAK PATAH */
-    transition: width 0.4s ease-in-out; 
-    overflow: hidden; 
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 250px);
+    transition: width 0.4s ease-in-out;
+    overflow: hidden;
 }
 
-/* Jika sidebar mengecil, main-wrapper harus melebar mulus */
-.sidebar-container.collapsed ~ .main-wrapper {
+.sidebar-container.collapsed~.main-wrapper {
     width: calc(100% - 80px);
 }
 
-.navbar-container { 
-    height: 70px; 
-    background-color: var(--clean-white); 
-    border-bottom: 1px solid #E2E8F0; 
-    z-index: 99; 
-    flex-shrink: 0; 
+.navbar-container {
+    height: 70px;
+    background-color: var(--clean-white);
+    border-bottom: 1px solid #E2E8F0;
+    z-index: 99;
+    flex-shrink: 0;
 }
 
-.content-container { 
-    padding: 30px; 
-    flex: 1; 
-    overflow-y: auto; 
+.content-container {
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
 }
 
-/* ========================================= */
-/* 4. RESPONSIVE MOBILE                      */
-/* ========================================= */
 @media (max-width: 768px) {
-    .sidebar-container { 
-        position: fixed; 
-        height: 100vh; 
-        left: -260px; /* Posisi awal di luar layar */
-        box-shadow: 5px 0 15px rgba(0,0,0,0.05); 
+    .sidebar-container {
+        position: fixed;
+        height: 100vh;
+        left: -260px;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.05);
         z-index: 9999;
     }
-    
-    .sidebar-container.active { 
-        left: 0; /* Meluncur masuk dengan mulus */
+    .sidebar-container.active {
+        left: 0;
     }
-    
-    .main-wrapper { 
-        width: 100%; /* Di HP, main-wrapper mengambil layar penuh */
+    .main-wrapper {
+        width: 100%;
     }
-    
-    /* Matikan fungsi collapsed desktop jika layar kecil */
-    .sidebar-container.collapsed ~ .main-wrapper {
-        width: 100%; 
+    .sidebar-container.collapsed~.main-wrapper {
+        width: 100%;
     }
-    
     .content-container {
-        padding: 20px; 
+        padding: 20px;
     }
 }
 
-/* Untuk browser Chrome, Safari, dan Opera */
 ::-webkit-scrollbar {
     display: none;
     width: 0;
     height: 0;
 }
 
-/* Untuk browser Firefox dan Edge versi baru */
 * {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-/* --- CUSTOM SWEETALERT EDUTRACK THEME --- */
-
-/* Desain Kotak Pop-up */
 .eureka-swal-popup {
-    background-color: #ffffff !important; 
-    border-radius: 16px !important;       
+    background-color: #ffffff !important;
+    border-radius: 16px !important;
     padding: 24px !important;
-    /* Bayangan pop-up dibuat sedikit kebiruan agar lebih menyatu dengan tema */
-    box-shadow: 0 10px 25px rgba(21, 76, 121, 0.15) !important; 
+    box-shadow: 0 10px 25px rgba(21, 76, 121, 0.15) !important;
     border: 1px solid #E2E8F0 !important;
 }
 
+
 /* Desain Judul */
+
 .eureka-swal-title {
-    color: #111827 !important; /* Warna Deep Ink Edutrack */
+    color: #111827 !important;
     font-size: 1.5rem !important;
     font-weight: 800 !important;
     letter-spacing: -0.5px !important;
 }
 
-/* Desain Teks/Deskripsi Bawaan Swal */
 .swal2-html-container {
-    color: #64748B !important; /* Warna Slate Gray Edutrack */
+    color: #64748B !important;
     font-weight: 500 !important;
 }
 
-/* Desain Tombol Konfirmasi (Ya) - Memakai Warna Navy Edutrack */
+
+/* Desain Tombol Konfirmasi (Ya) -  */
+
 .eureka-btn-confirm {
-    background-color: #154C79; /* Biru Gelap Edutrack (Utama) */
+    background-color: #154C79;
     color: white;
     border: none;
     padding: 10px 24px;
@@ -204,14 +198,13 @@ body {
 }
 
 .eureka-btn-confirm:hover {
-    background-color: #103A5C; /* Efek hover lebih gelap */
+    background-color: #103A5C;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(21, 76, 121, 0.3);
 }
 
-/* Desain Tombol Batal */
 .eureka-btn-cancel {
-    background-color: #F9FAFB; /* Soft Cloud Edutrack */
+    background-color: #F9FAFB;
     color: #64748B;
     border: 1px solid #E2E8F0;
     padding: 10px 24px;
@@ -227,7 +220,6 @@ body {
     color: #111827;
 }
 
-/* Mengubah warna icon 'Warning' bawaan Swal menjadi Aksen Orange Edutrack */
 .swal2-icon.swal2-warning {
     border-color: #F38118 !important;
     color: #F38118 !important;

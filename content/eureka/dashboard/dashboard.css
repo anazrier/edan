@@ -1,8 +1,5 @@
-/* ==========================================================
-   DASHBOARD EUREKA STYLESHEET (VERSI RAPI & VERTIKAL)
-   ========================================================== */
-
 /* --- Header Dashboard --- */
+
 .dashboard-header {
     margin-bottom: 20px;
 }
@@ -19,7 +16,9 @@
     margin-top: 5px;
 }
 
+
 /* --- Banner Notifikasi Jadwal Terdekat --- */
+
 .upcoming-class-banner {
     background: linear-gradient(to right, #f4f9ff, #ffffff);
     border-left: 4px solid #58a4df;
@@ -29,7 +28,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #eef2f7;
 }
 
@@ -98,7 +97,9 @@
     margin: 0;
 }
 
+
 /* --- Warna Tema Card Atas (Soft Pastel) --- */
+
 .card-purple {
     background-color: #8b78e6;
     color: #fff;
@@ -119,7 +120,9 @@
     color: #fff;
 }
 
+
 /* --- Penyesuaian isi Card Atas --- */
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -134,7 +137,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 125px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     border: none;
 }
 
@@ -156,12 +159,14 @@
 .card-desc {
     font-size: 12px;
     opacity: 0.8;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 10px;
     margin-top: auto;
 }
 
+
 /* --- Utility Classes Card Atas --- */
+
 .float-right {
     float: right;
 }
@@ -187,7 +192,9 @@
     opacity: 0.8;
 }
 
+
 /* --- Layout Grid Bawah (Asimetris 2:1) --- */
+
 .dashboard-content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -200,11 +207,13 @@
     gap: 20px;
 }
 
+
 /* --- Card Konten Bawah --- */
+
 .info-card {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #f0f0f0;
     overflow: hidden;
 }
@@ -231,7 +240,9 @@
     padding: 15px;
 }
 
+
 /* --- Utility Classes Konten Bawah --- */
+
 .text-center {
     text-align: center;
 }
@@ -272,7 +283,9 @@
     color: #0056b3;
 }
 
+
 /* --- Card Khusus "Perlu Perhatian" (Warning) --- */
+
 .warning-card {
     border-left: 4px solid #e74a3b;
 }
@@ -309,7 +322,9 @@
     font-size: 13px;
 }
 
+
 /* --- Styling List Pengumuman --- */
+
 .announcement-list {
     list-style: none;
     padding: 0;
@@ -357,7 +372,9 @@
     line-height: 1.5;
 }
 
+
 /* --- Styling List Tugas Terdekat --- */
+
 .task-item {
     display: flex;
     align-items: center;
@@ -407,7 +424,9 @@
     margin: 2px 0 0 0;
 }
 
+
 /* --- Jadwal Kuliah Hari Ini --- */
+
 .schedule-item {
     display: flex;
     align-items: center;
@@ -417,18 +436,21 @@
     background: #fcfcfc;
     border-radius: 8px;
     border: 1px solid #f5f5f5;
-    border-left: 4px solid #e3e6f0; /* Default abu-abu untuk kelas selesai */
+    border-left: 4px solid #e3e6f0;
+    /* Default abu-abu untuk kelas selesai */
 }
 
 .schedule-item:last-child {
     margin-bottom: 0;
 }
 
+
 /* Highlight untuk kelas yang sedang/akan berlangsung */
+
 .schedule-item.active {
     background: #f4f9ff;
     border-color: #eef6fc;
-    border-left-color: #58a4df; 
+    border-left-color: #58a4df;
 }
 
 .schedule-time {
@@ -464,6 +486,7 @@
 
 
 /* --- Mobile Responsive --- */
+
 @media (max-width: 992px) {
     .dashboard-content-grid {
         grid-template-columns: 1fr;
@@ -476,7 +499,6 @@
         align-items: flex-start;
         gap: 15px;
     }
-
     .banner-right {
         width: 100%;
         justify-content: space-between;
@@ -484,4 +506,3 @@
         padding-top: 15px;
     }
 }
-

@@ -1,4 +1,5 @@
-/* Layout Tab Modern */
+/* --- Layout Tab Modern --- */
+
 .bio-tabs {
     display: flex;
     gap: 10px;
@@ -42,7 +43,9 @@
     border-radius: 3px 3px 0 0;
 }
 
-/* Grid Utama: Kiri (Profile), Kanan (Form) */
+
+/* --- Kontainer Utama (Grid) --- */
+
 .bio-container {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -50,12 +53,14 @@
     align-items: start;
 }
 
-/* --- Kiri: Kartu Profil --- */
+
+/* --- Kolom Kiri: Kartu Profil --- */
+
 .bio-profile-card {
     background: #fff;
     padding: 30px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -81,7 +86,7 @@
     border: 4px solid #fff;
     position: absolute;
     bottom: -40px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline {
@@ -105,9 +110,11 @@
 .file-hint {
     font-size: 11px;
     color: #888;
-    margin-top: 8px;
-    margin-bottom: 25px;
+    margin: 8px 0 25px;
 }
+
+
+/* Info Kontak Samping */
 
 .contact-info {
     width: 100%;
@@ -138,12 +145,14 @@
     cursor: pointer;
 }
 
-/* --- Kanan: Kartu Form --- */
+
+/* --- Kolom Kanan: Kartu Form --- */
+
 .bio-form-card {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #f0f0f0;
 }
 
@@ -155,7 +164,9 @@
     border-bottom: 1px solid #eee;
 }
 
-/* Styling Inputan */
+
+/* Styling Input & Group */
+
 .bio-form {
     display: flex;
     flex-direction: column;
@@ -203,7 +214,6 @@ label {
     transition: all 0.2s;
     outline: none;
     background: #fff;
-    font-family: 'Nunito', sans-serif;
 }
 
 .form-control:focus {
@@ -211,10 +221,11 @@ label {
     box-shadow: 0 0 0 3px rgba(74, 155, 220, 0.1);
 }
 
-/* Input dengan Suffix (kg / cm) */
+
+/* Input dengan Akhiran (kg/cm) */
+
 .flex-group {
     display: flex;
-    flex-direction: row;
     gap: 15px;
 }
 
@@ -237,7 +248,9 @@ label {
     font-weight: 600;
 }
 
-/* Tombol Simpan */
+
+/* Aksi Form & Tombol */
+
 .form-actions {
     margin-top: 15px;
     display: flex;
@@ -264,35 +277,32 @@ label {
     transform: translateY(-1px);
 }
 
-/* Responsive Mobile */
-@media (max-width: 992px) {
-    .bio-container {
-        grid-template-columns: 1fr;
-    }
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-    .bio-profile-card {
-        padding: 30px;
-    }
-}
 
-/* --- Tambahan untuk Fitur Tab & Akademik --- */
+/* --- Sistem Tab & Akademik --- */
+
 .tab-content {
-    display: none; /* Sembunyikan semua tab secara default */
+    display: none;
     animation: fadeIn 0.3s ease-in-out;
 }
 
 .tab-content.active-tab {
-    display: block; /* Tampilkan tab yang sedang aktif */
+    display: block;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Style khusus inputan Readonly (Akademik) */
+
+/* Input Khusus Read-Only */
+
 .text-read-only {
     background-color: #f8f9fc;
     border-color: #e3e6f0;
@@ -300,16 +310,16 @@ label {
     cursor: default;
 }
 
-/* Style Badge Status AKTIF */
+
+/* Badge Status Aktif */
+
 .status-badge {
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 700;
     border-radius: 8px;
     display: inline-block;
-    width: fit-content;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .active-badge {
@@ -318,7 +328,9 @@ label {
     border: 1px solid rgba(40, 167, 69, 0.2);
 }
 
-/* --- Styling Modern Table untuk Sertifikasi --- */
+
+/* --- Tabel Modern (Sertifikasi) --- */
+
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -344,7 +356,6 @@ label {
     color: #555;
     font-weight: 700;
     text-transform: uppercase;
-    white-space: nowrap;
 }
 
 .modern-table td {
@@ -352,18 +363,15 @@ label {
     font-size: 13px;
     color: #333;
     border-bottom: 1px solid #eee;
-    vertical-align: middle;
-}
-
-.modern-table tbody tr:last-child td {
-    border-bottom: none;
 }
 
 .modern-table tbody tr:hover {
     background-color: #fafbfc;
 }
 
-/* Styling Tombol Aksi di Tabel (Edit & Hapus) */
+
+/* Tombol Aksi Tabel */
+
 .action-btn {
     background: none;
     border: none;
@@ -373,7 +381,34 @@ label {
     transition: 0.2s;
     font-size: 14px;
 }
-.edit-btn { color: #f6c23e; } /* Kuning Warning */
-.edit-btn:hover { background: #fdf5df; }
-.delete-btn { color: #e74a3b; } /* Merah Danger */
-.delete-btn:hover { background: #fceceb; }
+
+.edit-btn {
+    color: #f6c23e;
+}
+
+.edit-btn:hover {
+    background: #fdf5df;
+}
+
+.delete-btn {
+    color: #e74a3b;
+}
+
+.delete-btn:hover {
+    background: #fceceb;
+}
+
+
+/* --- Media Queries Responsif --- */
+
+@media (max-width: 992px) {
+    .bio-container {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .bio-profile-card {
+        padding: 30px;
+    }
+}

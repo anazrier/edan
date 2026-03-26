@@ -1,8 +1,5 @@
-/* ==========================================================
-   KRS & KHS STYLESHEET (KOMPLET & VERTIKAL)
-   ========================================================== */
+/* --- Komponen Global --- */
 
-/* --- Styling Komponen Global untuk File Ini --- */
 .btn-primary {
     background-color: #58a4df;
     color: #ffffff;
@@ -17,7 +14,6 @@
     background-color: #468ac2;
 }
 
-/* Card pembungkus khusus halaman ini */
 .krs-card {
     background-color: #ffffff;
     border-radius: 12px;
@@ -26,7 +22,9 @@
     overflow: hidden;
 }
 
-/* --- Tab Navigasi Container --- */
+
+/* --- Navigasi Tab --- */
+
 .krs-tabs-container {
     display: flex;
     gap: 15px;
@@ -80,13 +78,18 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ==========================================================
-   KHS (TRANSKRIP NILAI) STYLES
-   ========================================================== */
+
+/* --- Bagian KHS (Transkrip Nilai) --- */
 
 .krs-info-card {
     margin-bottom: 25px;
@@ -119,7 +122,9 @@
     font-size: 15px;
 }
 
-/* Styling Dropdown Unduh Transkrip */
+
+/* Dropdown Unduh Transkrip */
+
 .dropdown-container {
     position: relative;
     display: inline-block;
@@ -146,7 +151,7 @@
     top: 110%;
     background-color: #ffffff;
     min-width: 180px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     border-radius: 8px;
     border: 1px solid #f0f0f0;
     z-index: 100;
@@ -183,11 +188,19 @@
 }
 
 @keyframes fadeInDropdown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Grid KHS 2 Kolom */
+
+/* Grid KHS & Header Semester */
+
 .krs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -211,11 +224,9 @@
     margin: 0;
 }
 
-/* ==========================================================
-   KRS (RENCANA STUDI) STYLES
-   ========================================================== */
 
-/* Header Rencana Studi */
+/* --- Bagian KRS (Rencana Studi) --- */
+
 .krs-plan-header {
     padding: 20px 25px;
     margin-bottom: 20px;
@@ -262,12 +273,14 @@
     gap: 8px;
 }
 
-/* Accordion Container (Diubah jadi Grid 2 Kolom) */
+
+/* Accordion Grid (2 Kolom) */
+
 .accordion-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Membagi jadi 2 kolom sama besar */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-    align-items: start; /* Penting: biar kalau 1 dibuka, sebelahnya nggak ikut melar */
+    align-items: start;
 }
 
 .accordion-item {
@@ -337,19 +350,20 @@
     display: block;
 }
 
-/* =========================================
-   Tambahan: Styling Custom Checkbox 
-   ========================================= */
+
+/* --- Styling Custom Checkbox --- */
+
 .custom-checkbox {
-    display: inline-block;
+    display: block;
     position: relative;
     padding-left: 22px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     cursor: pointer;
     font-size: 22px;
     user-select: none;
+    margin-left: auto;
+    margin-right: auto;
     width: 20px;
-    vertical-align: middle;
 }
 
 .custom-checkbox input {
@@ -372,11 +386,11 @@
     transition: all 0.2s;
 }
 
-.custom-checkbox:hover input ~ .checkmark {
+.custom-checkbox:hover input~.checkmark {
     border-color: #58a4df;
 }
 
-.custom-checkbox input:checked ~ .checkmark {
+.custom-checkbox input:checked~.checkmark {
     background-color: #58a4df;
     border-color: #58a4df;
 }
@@ -387,7 +401,7 @@
     display: none;
 }
 
-.custom-checkbox input:checked ~ .checkmark:after {
+.custom-checkbox input:checked~.checkmark:after {
     display: block;
 }
 
@@ -401,18 +415,9 @@
     transform: rotate(45deg);
 }
 
-/* Mobile Responsive agar kembali 1 kolom di HP */
-@media (max-width: 992px) {
-    .accordion-container {
-        grid-template-columns: 1fr;
-    }
-}
 
-/* ==========================================================
-   TABEL & UTILITAS UMUM
-   ========================================================== */
+/* --- Tabel & Utilitas --- */
 
-/* Tabel Modern */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -451,15 +456,36 @@
     border-bottom: none;
 }
 
-/* Pengaturan Lebar Kolom */
-.col-pilih { width: 8%; }
-.col-kode { width: 15%; }
-.col-matkul { width: 45%; }
-.col-sks { width: 10%; }
-.col-kelas { width: 22%; }
-.col-nilai { width: 10%; }
 
-/* Badges */
+/* Pengaturan Lebar Kolom */
+
+.col-pilih {
+    width: 8%;
+}
+
+.col-kode {
+    width: 15%;
+}
+
+.col-matkul {
+    width: 45%;
+}
+
+.col-sks {
+    width: 10%;
+}
+
+.col-kelas {
+    width: 22%;
+}
+
+.col-nilai {
+    width: 10%;
+}
+
+
+/* Komponen Badge */
+
 .badge-ip {
     font-size: 12px;
     font-weight: 700;
@@ -467,8 +493,15 @@
     border-radius: 20px;
 }
 
-.success-bg { background-color: #eaf5ee; color: #28a745; }
-.warning-bg { background-color: #fff8e5; color: #f6c23e; }
+.success-bg {
+    background-color: #eaf5ee;
+    color: #28a745;
+}
+
+.warning-bg {
+    background-color: #fff8e5;
+    color: #f6c23e;
+}
 
 .badge-sks {
     font-size: 11px;
@@ -494,94 +527,56 @@
     font-weight: 700;
 }
 
-/* Custom Checkbox */
-.custom-checkbox {
-    display: block;
-    position: relative;
-    padding-left: 22px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    font-size: 22px;
-    user-select: none;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20px;
+
+/* Tipografi & Status */
+
+.matkul-name {
+    font-weight: 600;
+    color: #333;
 }
 
-.custom-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+.text-center {
+    text-align: center;
 }
 
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    transition: all 0.2s;
+.text-bold {
+    font-weight: 700;
 }
 
-.custom-checkbox:hover input ~ .checkmark {
-    border-color: #58a4df;
+.text-blue {
+    color: #58a4df;
 }
 
-.custom-checkbox input:checked ~ .checkmark {
-    background-color: #58a4df;
-    border-color: #58a4df;
+.text-green {
+    color: #28a745;
 }
 
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+.text-muted {
+    color: #aaa;
 }
 
-.custom-checkbox input:checked ~ .checkmark:after {
-    display: block;
+.empty-course-msg {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-style: italic;
 }
 
-.custom-checkbox .checkmark:after {
-    left: 6px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
 
-/* Typography & Utility */
-.matkul-name { font-weight: 600; color: #333; }
-.text-center { text-align: center; }
-.text-bold { font-weight: 700; }
-.text-blue { color: #58a4df; }
-.text-green { color: #28a745; }
-.text-muted { color: #aaa; }
-.empty-course-msg { text-align: center; padding: 20px; color: #888; font-style: italic; }
+/* --- Media Queries (Responsif) --- */
 
-/* --- Mobile Responsive --- */
 @media (max-width: 992px) {
+    .accordion-container,
     .krs-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .student-info-row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    .student-info-row,
     .krs-plan-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
     }
     .krs-plan-action {
         width: 100%;

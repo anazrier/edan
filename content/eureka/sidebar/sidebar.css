@@ -1,262 +1,198 @@
 :root {
-    /* Latar Belakang */
-    --soft-cloud: #F9FAFB;       
-    --clean-white: #FFFFFF;      
-    
-    /* Warna Brand & Aksen */
-    --edu-navy: #154C79;         /* Biru Gelap Edutrack (Utama) */
-    --edu-navy-hover: #103A5C;   /* Biru Gelap untuk efek Hover */
-    --edu-orange: #F38118;       /* Oranye Edutrack (Aksen/Tombol) */
+    --soft-cloud: #F9FAFB;
+    --clean-white: #FFFFFF;
+    /* Brand & Accent */
+    --edu-navy: #154C79;
+    --edu-navy-hover: #103A5C;
+    --edu-orange: #F38118;
     --edu-orange-hover: #D66D0F;
-    
-    /* Warna Teks (Tipografi) */
-    --deep-ink: #111827;         
-    --slate-gray: #64748B;       
-    
-    /* Status & Indikator */
-    --emerald-green: #10B981;    
-    --vivid-rose: #F43F5E;       
+    /* Typography */
+    --deep-ink: #111827;
+    --slate-gray: #64748B;
+    /* Status */
+    --emerald-green: #10B981;
+    --vivid-rose: #F43F5E;
 }
 
-.sidebar-content { 
-    padding: 20px 0; 
-    height: 100%; 
-    display: flex; 
-    flex-direction: column; 
-    background-color: var(--clean-white); 
-    border-right: 1px solid #E2E8F0; /* Garis pemisah halus dengan konten utama */
+
+/* --- Struktur Sidebar --- */
+
+.sidebar-content {
+    padding: 20px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clean-white);
+    border-right: 1px solid #E2E8F0;
 }
 
-.sidebar-header { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-    padding: 0 20px 30px; 
-    margin-bottom: 15px; 
-    border-bottom: 1px solid #E2E8F0; 
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E2E8F0;
 }
 
-/* Lingkaran Logo di Kiri Atas */
-.logo-circle { 
-    width: 40px; 
-    height: 40px; 
-    background-color: var(--edu-navy); /* Menggunakan Tosca UNIBI */
-    color: var(--clean-white); 
-    border-radius: 50%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-weight: 800; 
+
+/* Logo Lingkaran Kiri Atas */
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: var(--edu-navy);
+    color: var(--clean-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
     font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(21, 76, 121, 0.3); 
+    box-shadow: 0 4px 10px rgba(21, 76, 121, 0.3);
 }
 
-.sidebar-header h4 { 
-    color: var(--deep-ink); 
-    font-size: 1.25rem; 
+.sidebar-header h4 {
+    color: var(--deep-ink);
+    font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: -0.5px;
     margin: 0;
 }
 
-/* Styling Menu List */
-.sidebar-menu { 
-    list-style: none; 
-    margin-bottom: 20px; 
-    padding: 0; /* Mereset bawaan HTML agar rata kiri */
+
+/* --- Menu Navigasi --- */
+
+.sidebar-menu {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 0;
 }
 
-.sidebar-menu li a { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-    padding: 12px 20px; 
-    color: var(--slate-gray); /* Warna teks menu tidak aktif */
-    text-decoration: none; 
-    font-weight: 600; 
-    transition: all 0.2s ease; 
-    border-radius: 10px; /* Sudut lebih membulat */
-    margin: 0 15px 5px; /* Spasi antar menu */
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    color: var(--slate-gray);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-radius: 10px;
+    margin: 0 15px 5px;
 }
 
-/* Ikon bawaan menu */
 .sidebar-menu li a i {
     font-size: 1.1rem;
     transition: transform 0.2s ease;
 }
 
-.sidebar-menu li a.active { 
-    /* Latar belakang transparan warna Tosca (Alpha 8%) */
-    background-color: rgba(21, 76, 121, 0.08); 
-    color: var(--edu-navy); 
-}
-/* Efek Hover dan Menu Aktif (Yang Sedang Dibuka) */
-.sidebar-menu li a:hover {
-    background-color: rgba(21, 76, 121, 0.05); 
-    color: var(--edu-navy); 
-    /* Mengangkat menu sedikit ke atas (2px) */
-    transform: translateY(-2px); 
-    /* Memberikan bayangan Navy yang sangat lembut di sekelilingnya */
-    box-shadow: 0 6px 12px rgba(21, 76, 121, 0.12);
-} 
 
-/* Animasi ikon membesar sedikit saat di-hover */
+/* Status Aktif & Hover */
+
+.sidebar-menu li a.active {
+    background-color: rgba(21, 76, 121, 0.08);
+    color: var(--edu-navy);
+}
+
+.sidebar-menu li a:hover {
+    background-color: rgba(21, 76, 121, 0.05);
+    color: var(--edu-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(21, 76, 121, 0.12);
+}
+
 .sidebar-menu li a:hover i,
 .sidebar-menu li a.active i {
     transform: scale(1.15);
 }
 
-/* Styling untuk Teks Pengelompokan (Muted Text) */
-.menu-label { 
-    padding: 0 25px; 
-    font-size: 0.75rem; 
-    color: #94A3B8; /* Warna abu-abu yang lebih terang dari menu biasa */
-    margin-top: 20px; 
-    margin-bottom: 10px; 
-    text-transform: uppercase; 
+
+/* Label Pengelompokan Menu */
+
+.menu-label {
+    padding: 0 25px;
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
 }
 
-/* Penyesuaian jarak label pertama agar tidak terlalu jauh dari header */
-.sidebar-header + .menu-label {
+.sidebar-header+.menu-label {
     margin-top: 0;
 }
 
-/* ======================================================== */
-/* FITUR COLLAPSE SIDEBAR (Mode Layar Lebar / Desktop)      */
-/* ======================================================== */
 
-/* 1. Mengubah lebar container sidebar saat dilipat */
+/* --- Fitur Collapse (Sidebar Lipat) --- */
+
 .sidebar-container {
     transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
     overflow: hidden;
     overflow-y: auto;
-    -webkit-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
-    -moz-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
-    -ms-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
-    -o-transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), left 0.5s ease;
 }
 
 .sidebar-container.collapsed {
-    width: 80px; /* Menyempit jadi 80px saja */
+    width: 80px;
 }
 
 .sidebar-menu li a span,
 .sidebar-header h4 {
-    white-space: nowrap; 
+    white-space: nowrap;
     overflow: hidden;
-    /* Lebar fisik dan transparansi dikecilkan bersamaan secara perlahan */
-    transition: max-width 0.4s ease, opacity 0.3s ease, margin-left 0.4s ease;
-    max-width: 200px; /* Angka aman melebihi panjang teks */
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+    max-width: 200px;
     opacity: 1;
     display: inline-block;
-    vertical-align: middle;
 }
 
 .sidebar-container.collapsed .sidebar-menu li a span,
 .sidebar-container.collapsed .sidebar-header h4 {
     max-width: 0;
     opacity: 0;
-    margin-left: 0; /* Menarik teks agar tidak meninggalkan spasi kosong */
-}
-
-.menu-label {
-    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease, padding 0.4s ease;
-    max-height: 50px;
-    opacity: 1;
-    overflow: hidden;
-    white-space: nowrap;
+    display: none;
 }
 
 .sidebar-container.collapsed .menu-label {
     max-height: 0;
     opacity: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
 }
 
-.sidebar-menu li a {
-    transition: padding 0.4s ease, justify-content 0.4s;
-}
 
-.sidebar-header h4,
-.menu-label,
-.sidebar-menu li a span {
-    transition: opacity 0.25s ease, visibility 0.25s;
-    opacity: 1;
-    visibility: visible;
-}
+/* Penyesuaian Ikon Saat Lipat */
 
-/* 2. Menyembunyikan Teks Logo, Label, dan Teks Menu */
-.sidebar-container.collapsed .sidebar-header h4,
-.sidebar-container.collapsed .menu-label,
-.sidebar-container.collapsed .sidebar-menu li a span {
-    display: none; 
-}
-
-.sidebar-header {
-    transition: padding 0.4s ease;
-}
-
-/* 3. Menengahkan Bulatan Logo */
 .sidebar-container.collapsed .sidebar-header {
     padding-left: 0;
     padding-right: 0;
     justify-content: center;
 }
 
-/* 4. Menengahkan Ikon Menu & Memperbesar sedikit */
 .sidebar-container.collapsed .sidebar-menu li a {
     padding: 12px 0;
     justify-content: center;
-}
-
-.sidebar-menu li a i {
-    min-width: 25px; 
-    text-align: center;
-    transition: font-size 0.3s ease, transform 0.3s ease;
 }
 
 .sidebar-container.collapsed .sidebar-menu li a i {
     font-size: 1.3rem;
 }
 
-/* 5. Mengatur agar area kanan (konten) melebar saat sidebar mengecil */
-.main-wrapper {
-    transition: width 0.3s ease;
-}
 
-/* ======================================================== */
-/* RESPONSIVE MOBILE (Layar HP)                             */
-/* ======================================================== */
-@media (min-width: 769px) {
-    /* Saat tombol burger diklik di desktop */
-    .sidebar-container.collapsed {
-        width: 80px; /* Sidebar mengecil */
-    }
-    
-    /* Sembunyikan teks menu saat sidebar mengecil, sisakan ikonnya saja */
-    .sidebar-container.collapsed .menu-text {
-        display: none; 
-    }
-}
+/* --- Responsif Mobile --- */
 
-/* --- MODE MOBILE (Lebar layar 768px ke bawah) --- */
 @media (max-width: 768px) {
     .sidebar-container {
         position: fixed;
         top: 0;
-        left: -260px; /* Sembunyikan sidebar ke luar layar kiri */
+        left: -260px;
         height: 100vh;
         z-index: 9999;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     }
-
-    /* Saat tombol burger diklik di mobile (Class 'active' ditambahkan) */
     .sidebar-container.active {
-        left: 0; /* Geser masuk ke dalam layar */
+        left: 0;
     }
 }

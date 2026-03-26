@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="sidebar/sidebar.css">
     <link rel="stylesheet" href="navbar/navbar.css">
-    </head>
+</head>
+
 <body>
 
     <aside id="sidebar-container" class="sidebar-container"></aside>
@@ -20,9 +22,10 @@
     <script>
         loadComponent('sidebar-container', 'sidebar/sidebar.html');
         loadComponent('navbar-container', 'navbar/navbar.html');
-        
-        // Memanggil konten yang BERBEDA (contoh: blank.html)
+
+
         loadComponent('content-container', 'content/blank.html');
     </script>
 </body>
+
 </html>
