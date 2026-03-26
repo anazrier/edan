@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Perkuliahan - IFKK2192</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                             <span class="item-title">01 - SWEBOK dan Arsitektur</span>
                             <br><small style="color: var(--text-muted); font-size: 11px;">(3 Files - Tap to Expand)</small>
                         </div>
-                        <div class="floating-done" onclick="toggleDone('mat01')">
+                        <div class="floating-done" onclick="toggleDone(event, 'mat01')">
                             <span class="done-text">Mark Done</span>
                             <div class="done-circle">✓</div>
                         </div>
