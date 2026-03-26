@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRS KHS - Eureka</title>
+    
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <link rel="stylesheet" href="./content/eureka/sidebar/sidebar.css">
+    
+    <link rel="stylesheet" href="./content/eureka/jadwal-kuliah/jadwal-kuliah.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside id="sidebar-container" class="sidebar-container"></aside>
+        <div class="main-wrapper">
+            <header id="navbar-container" class="navbar-container"></header>
+            <main id="content-container" class="content-container"></main>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        // Rakit layout, tapi isi tengahnya khusus Biodata
+        loadComponent('sidebar-container', 'content/eureka/sidebar/sidebar.html');
+        loadComponent('navbar-container', 'navbar/navbar.html');
+        loadComponent('content-container', 'content/eureka/jadwal-kuliah/jadwal-kuliah.html');
+    </script>
+</body>
+</html>
