@@ -1,12 +1,15 @@
-/* --- Layout Tab Modern --- */
-
+/* ==========================================================
+   LAYOUT TAB MODERN & SCROLLBAR
+   ========================================================== */
 .bio-tabs {
     display: flex;
     gap: 10px;
     margin-bottom: 25px;
     border-bottom: 2px solid #eee;
     overflow-x: auto;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .tab-btn {
@@ -35,7 +38,7 @@
 .tab-btn.active::after {
     content: '';
     position: absolute;
-    bottom: -7px;
+    bottom: -11px;
     left: 0;
     width: 100%;
     height: 3px;
@@ -43,18 +46,23 @@
     border-radius: 3px 3px 0 0;
 }
 
+/* Styling Scrollbar Tab untuk Browser Modern */
+.bio-tabs::-webkit-scrollbar { height: 4px; }
+.bio-tabs::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+.bio-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+.bio-tabs::-webkit-scrollbar-thumb:hover { background: #58a4df; }
 
-/* --- Kontainer Utama (Grid) --- */
-
+/* ==========================================================
+   KONTAINER UTAMA & KARTU
+   ========================================================== */
 .bio-container {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 25px;
     align-items: start;
+    min-width: 0; /* Anti Grid Blowout */
+    max-width: 100%;
 }
-
-
-/* --- Kolom Kiri: Kartu Profil --- */
 
 .bio-profile-card {
     background: #fff;
@@ -113,9 +121,6 @@
     margin: 8px 0 25px;
 }
 
-
-/* Info Kontak Samping */
-
 .contact-info {
     width: 100%;
     border-top: 1px dashed #eee;
@@ -145,17 +150,18 @@
     cursor: pointer;
 }
 
-
-/* --- Kolom Kanan: Kartu Form --- */
-
 .bio-form-card {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #f0f0f0;
+    min-width: 0; /* Anti Grid Blowout */
 }
 
+/* ==========================================================
+   FORM & INPUT STYLING
+   ========================================================== */
 .form-section-title {
     font-size: 16px;
     color: #333;
@@ -163,9 +169,6 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
 }
-
-
-/* Styling Input & Group */
 
 .bio-form {
     display: flex;
@@ -185,6 +188,11 @@
     gap: 20px;
 }
 
+.flex-group {
+    display: flex;
+    gap: 15px;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -201,17 +209,12 @@ label {
     color: #555;
 }
 
-.required {
-    color: #e74a3b;
-}
+.required { color: #e74a3b; }
+.input-hint { font-size: 11px; color: #e74a3b; margin-top: 2px; }
 
-.input-hint {
-    font-size: 11px;
-    color: #e74a3b;
-    margin-top: 2px;
-}
-
-.form-control {
+.form-control, textarea {
+    box-sizing: border-box;
+    width: 100%;
     padding: 12px 15px;
     border: 1px solid #dcdfe6;
     border-radius: 8px;
@@ -227,14 +230,6 @@ label {
     box-shadow: 0 0 0 3px rgba(74, 155, 220, 0.1);
 }
 
-
-/* Input dengan Akhiran (kg/cm) */
-
-.flex-group {
-    display: flex;
-    gap: 15px;
-}
-
 .input-with-suffix {
     position: relative;
     display: flex;
@@ -242,7 +237,6 @@ label {
 }
 
 .input-with-suffix .form-control {
-    width: 100%;
     padding-right: 40px;
 }
 
@@ -280,25 +274,17 @@ label {
     transform: translateY(-1px);
 }
 
-
 .tab-content {
     display: none;
     animation: fadeIn 0.3s ease-in-out;
+    min-width: 0;
 }
 
-.tab-content.active-tab {
-    display: block;
-}
+.tab-content.active-tab { display: block; }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .text-read-only {
@@ -321,6 +307,28 @@ label {
     background-color: #eaf5ee;
     color: #28a745;
     border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+/* ==========================================================
+   STYLING TABEL PENDIDIKAN
+   ========================================================== */
+.section-title-with-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.certification-title { margin: 0; padding: 0; border: none; }
+
+.add-certification-btn {
+    margin: 0;
+    padding: 8px 15px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .table-responsive {
@@ -357,69 +365,8 @@ label {
     border-bottom: 1px solid #eee;
 }
 
-.modern-table tbody tr:hover {
-    background-color: #fafbfc;
-}
+.modern-table tbody tr:hover { background-color: #fafbfc; }
 
-.action-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px 8px;
-    border-radius: 4px;
-    transition: 0.2s;
-    font-size: 14px;
-}
-
-.edit-btn {
-    color: #f6c23e;
-}
-
-.edit-btn:hover {
-    background: #fdf5df;
-}
-
-.delete-btn {
-    color: #e74a3b;
-}
-
-.delete-btn:hover {
-    background: #fceceb;
-}
-.form-control, textarea {
-    box-sizing: border-box;
-    width: 100%;
-}
-
-/* ==========================================================
-   PERBAIKAN CSS RESPONSIVE & CLEAN UNTUK BIODATA
-   ========================================================== */
-
-/* --- Styling Tambahan untuk Laptop/PC --- */
-.section-title-with-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-.certification-title {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-.add-certification-btn {
-    margin: 0;
-    padding: 8px 15px;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* Penyesuaian Lebar Kolom Tabel Pendidikan */
 .education-table th { white-space: nowrap; }
 .col-no { width: 5%; text-align: center; }
 .col-nama { width: 40%; }
@@ -431,11 +378,39 @@ label {
 .pdf-link { color: #4a9bdc; text-decoration: none; font-size: 18px; }
 .education-actions { margin-top: 30px; }
 
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.edit-btn { color: #f6c23e; }
+.edit-btn:hover { background: #fdf5df; }
+.delete-btn { color: #e74a3b; }
+.delete-btn:hover { background: #fceceb; }
+
+/* ==========================================================
+   PENCEGAH HALAMAN BERGESER (ANTI HORIZONTAL SCROLL)
+   ========================================================== */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVE (MAX-WIDTH: 992px)
+   ========================================================== */
 @media (max-width: 992px) {
+    /* Layout Utama jadi 1 kolom */
     .bio-container {
         grid-template-columns: 1fr !important;
     }
     
+    /* Form input bertumpuk ke bawah */
     .form-row, 
     .form-row-3 {
         grid-template-columns: 1fr !important;
@@ -443,12 +418,24 @@ label {
         flex-direction: column !important;
         gap: 15px;
     }
+
+    /* Input yang pakai flex (Tinggi & Berat) ditumpuk */
+    .flex-group {
+        flex-direction: column !important;
+        gap: 15px;
+    }
     
+    /* Kurangi padding card agar layar HP tidak sempit */
+    .bio-profile-card,
+    .bio-form-card {
+        padding: 20px !important;
+    }
+
+    /* Penyesuaian Header Tabel Pendidikan */
     .section-title-with-btn {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 15px;
-        margin-top: 30px;
     }
     
     .certification-title {
@@ -462,15 +449,29 @@ label {
         justify-content: center;
     }
 
-    .flex-group {
-        flex-direction: column !important;
+    /* Tabel Responsive di dalam kotaknya saja */
+    .table-responsive {
+        width: 100% !important;
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch; 
+        display: block !important; 
     }
-        .bio-profile-card,
-        
-    .bio-form-card {
-        padding: 20px !important;
+
+    .education-table {
+        min-width: 600px !important; 
+        table-layout: auto !important; 
     }
-    
+
+    .education-table th, 
+    .education-table td {
+        white-space: nowrap !important; 
+        padding: 10px !important;
+    }
+
+    .pdf-link { font-size: 20px !important; }
+    .action-btn { padding: 8px !important; font-size: 16px !important; }
+
+    /* Tombol simpan memanjang di layar HP */
     .form-actions {
         justify-content: center !important;
         width: 100%;
