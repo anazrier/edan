@@ -20,14 +20,14 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html" style="text-decoration: none;">
+                        <a href="#" style="text-decoration: none;">
                             <img src="assets/images/logo.jpg.png" alt="Logo UNIBI Eureka">
                         </a>
                     </div>
                     <h1 class="auth-title">Log in</h1>
                     <p class="auth-subtitle">Masukkan data Anda untuk mengakses platform pembelajaran.</p>
 
-                    <form action="index.html" onsubmit="prosesLogin(event)">
+                    <form onsubmit="prosesLogin(event)">
                         <div class="form-group position-relative mb-4">
                             <input type="text" id="username" class="form-control" placeholder="Username / NIM">
                             <div class="form-control-icon">
@@ -109,7 +109,8 @@
                         background: '#ffffff',
                         color: '#333333'
                     }).then(() => {
-                        window.location.href = 'index.html'; 
+                        // PERBAIKAN 2: Ubah arah ke app.html
+                        window.location.href = 'app.html'; 
                     });
                 } else {
                     Swal.fire({
