@@ -206,7 +206,6 @@ function simpanKRS() {
 function tampilkanUbahSandi() {
     Swal.fire({
         title: 'Ubah Kata Sandi?',
-        // Kita gunakan html untuk memasukkan form input
         html: `
             <div style="text-align: left; margin-top: 10px;">
                 <label style="font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 5px; display: block;">Kata Sandi Lama</label>
@@ -221,13 +220,12 @@ function tampilkanUbahSandi() {
                 <input type="password" id="confirm-pass" class="swal2-input" placeholder="Ketik ulang kata sandi baru" style="margin: 0; width: 100%; box-sizing: border-box; font-size: 0.95rem;">
             </div>
         `,
-        icon: 'info', // Mengikuti style konfirmasiSimpan
+        icon: 'info', 
         showCancelButton: true,
         confirmButtonColor: '#58a4df',
         cancelButtonColor: '#f27a71',
         confirmButtonText: 'Ya, Simpan',
         cancelButtonText: 'Batal',
-        // preConfirm berfungsi mengecek input sebelum popup tertutup
         preConfirm: () => {
             const oldPass = document.getElementById('old-pass').value;
             const newPass = document.getElementById('new-pass').value;
@@ -249,14 +247,13 @@ function tampilkanUbahSandi() {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            // Popup sukses yang style-nya persis dengan konfirmasiSimpan
             Swal.fire({
                 title: 'Tersimpan!',
                 text: 'Kata sandi Anda berhasil diperbarui.',
                 icon: 'success',
                 confirmButtonColor: '#58a4df'
             });
-            // (Kamu bisa tambahkan kode untuk mengirim data ke database di sini nantinya)
         }
     })
 }
+
