@@ -1,20 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 :root {
-    /* Latar Belakang */
     --soft-cloud: #F9FAFB;
     --clean-white: #FFFFFF;
-    /* Warna Brand & Aksen */
     --edu-navy: #154C79;
-    /* Biru Gelap Edutrack (Utama) */
     --edu-navy-hover: #103A5C;
-    /* Biru Gelap untuk efek Hover */
     --edu-orange: #F38118;
-    /* Oranye Edutrack (Aksen/Tombol) */
     --edu-orange-hover: #D66D0F;
-    /* Warna Teks (Tipografi) */
     --deep-ink: #111827;
     --slate-gray: #64748B;
-    /* Status & Indikator */
     --emerald-green: #10B981;
     --vivid-rose: #F43F5E;
 }
@@ -26,9 +19,6 @@
     font-family: 'Nunito', sans-serif;
 }
 
-
-/*  warna latar abu-abu terang dan teks gelap */
-
 body {
     background-color: var(--soft-cloud);
     color: var(--deep-ink);
@@ -38,8 +28,6 @@ body {
     width: 100%;
 }
 
-
-/* scrollbar  */
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -58,9 +46,6 @@ body {
     background: #94A3B8;
 }
 
-
-/*Laayout Utama*/
-
 .app-container {
     display: flex;
     min-height: 100vh;
@@ -68,13 +53,9 @@ body {
     overflow-x: hidden;
 }
 
-
-/* Layout Grid Utama - Sidebar */
-
 .sidebar-container {
     width: 250px;
     background-color: var(--clean-white);
-    /* INI KUNCI ANIMASI MULUSNYA */
     transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
     z-index: 100;
     border-right: 1px solid #E2E8F0;
@@ -166,9 +147,6 @@ body {
     border: 1px solid #E2E8F0 !important;
 }
 
-
-/* Desain Judul */
-
 .eureka-swal-title {
     color: #111827 !important;
     font-size: 1.5rem !important;
@@ -180,9 +158,6 @@ body {
     color: #64748B !important;
     font-weight: 500 !important;
 }
-
-
-/* Desain Tombol Konfirmasi (Ya) -  */
 
 .eureka-btn-confirm {
     background-color: #154C79;

@@ -1,23 +1,15 @@
-/* --- Root Variables --- */
-
 :root {
     --soft-cloud: #F9FAFB;
     --clean-white: #FFFFFF;
-    /* Brand & Accent */
     --edu-navy: #154C79;
     --edu-navy-hover: #103A5C;
     --edu-orange: #F38118;
     --edu-orange-hover: #D66D0F;
-    /* Typography */
     --deep-ink: #111827;
     --slate-gray: #64748B;
-    /* Status */
     --emerald-green: #10B981;
     --vivid-rose: #F43F5E;
 }
-
-
-/* --- Base Styles --- */
 
 body {
     background-color: var(--soft-cloud);
@@ -29,9 +21,6 @@ body {
 #auth {
     min-height: 100vh;
 }
-
-
-/* --- Auth Left Section --- */
 
 #auth-left {
     flex: 0 0 40%;
@@ -66,9 +55,6 @@ body {
     margin-bottom: 3rem;
 }
 
-
-/* --- Form Elements --- */
-
 .form-control {
     background-color: var(--clean-white);
     border: 1px solid #E2E8F0;
@@ -95,9 +81,6 @@ body {
     color: var(--edu-navy);
 }
 
-
-/* --- Buttons & Inputs --- */
-
 .form-check-input:checked {
     background-color: var(--edu-navy);
     border-color: var(--edu-navy);
@@ -116,9 +99,6 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(21, 76, 121, 0.3);
 }
-
-
-/* --- Auth Right Section --- */
 
 #auth-right {
     flex: 1;
@@ -140,9 +120,6 @@ body {
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-
-/* --- Responsive --- */
 
 @media (max-width: 991.98px) {
     #auth-left {

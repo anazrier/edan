@@ -1,5 +1,3 @@
-/* --- Komponen Global --- */
-
 .btn-primary {
     background-color: #58a4df;
     color: #ffffff;
@@ -21,9 +19,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     overflow: hidden;
 }
-
-
-/* --- Navigasi Tab --- */
 
 .krs-tabs-container {
     display: flex;
@@ -88,9 +83,6 @@
     }
 }
 
-
-/* --- Bagian KHS (Transkrip Nilai) --- */
-
 .krs-info-card {
     margin-bottom: 25px;
 }
@@ -122,8 +114,6 @@
     font-size: 15px;
 }
 
-
-/* Dropdown Unduh Transkrip */
 
 .dropdown-container {
     position: relative;
@@ -198,9 +188,6 @@
     }
 }
 
-
-/* Grid KHS & Header Semester */
-
 .krs-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -224,8 +211,6 @@
     margin: 0;
 }
 
-
-/* --- Bagian KRS (Rencana Studi) --- */
 
 .krs-plan-header {
     padding: 20px 25px;
@@ -272,9 +257,6 @@
     align-items: center;
     gap: 8px;
 }
-
-
-/* Accordion Grid (2 Kolom) */
 
 .accordion-container {
     display: grid;
@@ -350,9 +332,6 @@
     display: block;
 }
 
-
-/* --- Styling Custom Checkbox --- */
-
 .custom-checkbox {
     display: block;
     position: relative;
@@ -415,9 +394,6 @@
     transform: rotate(45deg);
 }
 
-
-/* --- Tabel & Utilitas --- */
-
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -456,9 +432,6 @@
     border-bottom: none;
 }
 
-
-/* Pengaturan Lebar Kolom */
-
 .col-pilih {
     width: 8%;
 }
@@ -483,8 +456,6 @@
     width: 10%;
 }
 
-
-/* Komponen Badge */
 
 .badge-ip {
     font-size: 12px;
@@ -527,9 +498,6 @@
     font-weight: 700;
 }
 
-
-/* Tipografi & Status */
-
 .matkul-name {
     font-weight: 600;
     color: #333;
@@ -562,9 +530,6 @@
     font-style: italic;
 }
 
-
-/* --- Media Queries (Responsif) --- */
-
 @media (max-width: 992px) {
     .accordion-container,
     .krs-grid {
@@ -584,25 +549,21 @@
     }
 }
 
-/* Memastikan card profil tidak memotong elemen yang keluar dari kotaknya */
 .krs-info-card, 
 .student-info-row {
     overflow: visible !important;
 }
 
-/* Memaksa menu dropdown tampil di lapisan paling atas */
 .info-group.dropdown-container .dropdown-menu {
     z-index: 9999 !important;
 }
 
-/* Memastikan elemen di bawahnya mengalah */
 .krs-grid, 
 .accordion-grid {
     position: relative;
     z-index: 1;
 }
 
-/* --- Action Bar Simpan KRS --- */
 .krs-action-bar {
     display: flex;
     justify-content: space-between;
@@ -613,7 +574,6 @@
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-top: 24px;
     
-    /* Membuat element tetap terlihat di bawah layar jika konten panjang */
     position: sticky;
     bottom: 20px; 
     z-index: 100;
@@ -639,7 +599,6 @@
 }
 
 .btn-simpan-krs {
-    /* Gunakan warna biru Mazer atau sesuaikan dengan root warna primermu */
     background-color: #435ebe; 
     color: #ffffff;
     border: none;
@@ -664,14 +623,13 @@
     transform: translateY(0);
 }
 
-/* Responsif untuk tampilan Mobile */
 @media (max-width: 768px) {
     .krs-action-bar {
         flex-direction: column;
         gap: 15px;
         text-align: center;
         padding: 15px;
-        bottom: 10px; /* Jarak lebih rapat untuk layar kecil */
+        bottom: 10px;
     }
     
     .btn-simpan-krs {

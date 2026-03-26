@@ -1,52 +1,44 @@
-
-    /* --- Inisialisasi Variabel --- */
     let currentTaskId = "";
 
-    /* --- Kontrol Interaksi Materi --- */
     function toggleDetails(id) {
         document.getElementById(id).classList.toggle('active');
     }
 
-    // [PERBAIKAN]: Tambahkan parameter 'event' di sini
     function toggleDone(event, id) {
-        // Mencegah trigger buka-tutup materi saat klik area done
         event.stopPropagation();
         const element = document.querySelector(`#${id} .floating-done`);
         element.classList.toggle('is-done');
         updateGlobalProgress();
     }
 
-    /* --- Manajemen Modal Tugas --- */
     function openModal(title, taskId) {
         currentTaskId = taskId;
         document.getElementById('modalTitle').innerText = title;
-        document.getElementById('uploadModal').classList.add('active'); // Memakai class 'active'
+        document.getElementById('uploadModal').classList.add('active'); 
     }
 
     function closeModal() {
         const fileInput = document.getElementById('fileInput');
-
-        // Konfirmasi jika ada file yang sudah dipilih
         if (fileInput.value !== "") {
             Swal.fire({
                 title: '<strong style="color: #333333;">Batalkan Unggahan?</strong>',
                 html: '<span style="color: #555555;">File yang sudah Anda pilih tidak akan tersimpan.</span>',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#f27a71', // Coral soft untuk aksi membatalkan (hapus)
-                cancelButtonColor: '#58a4df',  // Biru pastel untuk aksi aman (kembali)
+                confirmButtonColor: '#f27a71', 
+                cancelButtonColor: '#58a4df',  
                 confirmButtonText: 'Ya, Batalkan',
                 cancelButtonText: 'Kembali',
-                reverseButtons: true, // Tombol "Kembali" di kiri, "Batalkan" di kanan
-                background: '#ffffff', // MENGUNCI LATAR JADI PUTIH
-                color: '#333333'       // MENGUNCI TEKS JADI GELAP
+                reverseButtons: true, 
+                background: '#ffffff', 
+                color: '#333333'       
             }).then((result) => {
                 if (result.isConfirmed) {
                     resetAndClose();
                 }
             });
         } else {
-            // Jika tidak ada file yang dipilih, langsung tutup saja tanpa peringatan
+            
             resetAndClose();
         }
     }
@@ -57,7 +49,6 @@
         document.getElementById('fileNameDisplay').innerText = "";
     }
 
-    /* --- Validasi & Pengiriman File --- */
     function updateFileName() {
         const input = document.getElementById('fileInput');
         const display = document.getElementById('fileNameDisplay');
@@ -68,7 +59,6 @@
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
 
-    // 1. Validasi jika file kosong
     if (!file) {
         Swal.fire({
             icon: 'warning',
@@ -81,15 +71,13 @@
         return;
     }
 
-    // Hitung ukuran file
     let fileSize = (file.size / 1024).toFixed(1) + ' KB';
     if (file.size > 1024 * 1024) {
         fileSize = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
     }
 
-    // 2. Konfirmasi Pengiriman
     Swal.fire({
-        title: '<strong style="color: #333333;">Kirim Tugas?</strong>', // Memastikan judul berwarna gelap tebal
+        title: '<strong style="color: #333333;">Kirim Tugas?</strong>', 
         icon: 'question',
         html: `
             <div style="background-color: #f8fbff; border: 1px solid #eef2f7; border-radius: 16px; padding: 16px; margin: 15px 0 5px 0; display: flex; align-items: center; gap: 16px; text-align: left; box-shadow: 0 4px 12px rgba(88, 164, 223, 0.05);">
@@ -118,7 +106,6 @@
         color: '#333333'       
     }).then((result) => {
         
-        // 3. Jika diklik "Ya, Kirim"
         if (result.isConfirmed) {
             
             let timerInterval;
@@ -138,7 +125,6 @@
                 }
             }).then(() => {
                 
-                // Ubah status tombol tugas
                 const btn = document.querySelector(`#${currentTaskId} .task-btn`);
                 if (btn) {
                     btn.innerHTML = '<i class="fas fa-check"></i> Selesai';
@@ -149,7 +135,6 @@
                     btn.style.border = '1px solid #e1f3d8';
                 }
 
-                // Popup Sukses
                 Swal.fire({
                     title: '<strong style="color: #333333;">Berhasil!</strong>',
                     html: '<span style="color: #555555;">File tugas Anda telah diserahkan.</span>',
@@ -167,7 +152,6 @@
     });
 }
 
-    /* --- Kalkulasi Progress Bar --- */
     function updateGlobalProgress() {
         const fill = document.getElementById('mainProgress');
         const doneMateri = document.querySelectorAll('.floating-done.is-done').length;

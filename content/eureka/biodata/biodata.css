@@ -1,6 +1,3 @@
-/* ==========================================================
-   LAYOUT TAB MODERN & SCROLLBAR
-   ========================================================== */
 .bio-tabs {
     display: flex;
     gap: 10px;
@@ -46,21 +43,17 @@
     border-radius: 3px 3px 0 0;
 }
 
-/* Styling Scrollbar Tab untuk Browser Modern */
 .bio-tabs::-webkit-scrollbar { height: 4px; }
 .bio-tabs::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
 .bio-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 .bio-tabs::-webkit-scrollbar-thumb:hover { background: #58a4df; }
 
-/* ==========================================================
-   KONTAINER UTAMA & KARTU
-   ========================================================== */
 .bio-container {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 25px;
     align-items: start;
-    min-width: 0; /* Anti Grid Blowout */
+    min-width: 0; 
     max-width: 100%;
 }
 
@@ -156,12 +149,9 @@
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #f0f0f0;
-    min-width: 0; /* Anti Grid Blowout */
+    min-width: 0; 
 }
 
-/* ==========================================================
-   FORM & INPUT STYLING
-   ========================================================== */
 .form-section-title {
     font-size: 16px;
     color: #333;
@@ -309,9 +299,6 @@ label {
     border: 1px solid rgba(40, 167, 69, 0.2);
 }
 
-/* ==========================================================
-   STYLING TABEL PENDIDIKAN
-   ========================================================== */
 .section-title-with-btn {
     display: flex;
     justify-content: space-between;
@@ -393,24 +380,16 @@ label {
 .delete-btn { color: #e74a3b; }
 .delete-btn:hover { background: #fceceb; }
 
-/* ==========================================================
-   PENCEGAH HALAMAN BERGESER (ANTI HORIZONTAL SCROLL)
-   ========================================================== */
 html, body {
     overflow-x: hidden !important;
     max-width: 100%;
 }
 
-/* ==========================================================
-   MOBILE RESPONSIVE (MAX-WIDTH: 992px)
-   ========================================================== */
 @media (max-width: 992px) {
-    /* Layout Utama jadi 1 kolom */
     .bio-container {
         grid-template-columns: 1fr !important;
     }
     
-    /* Form input bertumpuk ke bawah */
     .form-row, 
     .form-row-3 {
         grid-template-columns: 1fr !important;
@@ -419,19 +398,16 @@ html, body {
         gap: 15px;
     }
 
-    /* Input yang pakai flex (Tinggi & Berat) ditumpuk */
     .flex-group {
         flex-direction: column !important;
         gap: 15px;
     }
     
-    /* Kurangi padding card agar layar HP tidak sempit */
     .bio-profile-card,
     .bio-form-card {
         padding: 20px !important;
     }
 
-    /* Penyesuaian Header Tabel Pendidikan */
     .section-title-with-btn {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -449,7 +425,6 @@ html, body {
         justify-content: center;
     }
 
-    /* Tabel Responsive di dalam kotaknya saja */
     .table-responsive {
         width: 100% !important;
         overflow-x: auto !important; 
@@ -471,7 +446,6 @@ html, body {
     .pdf-link { font-size: 20px !important; }
     .action-btn { padding: 8px !important; font-size: 16px !important; }
 
-    /* Tombol simpan memanjang di layar HP */
     .form-actions {
         justify-content: center !important;
         width: 100%;

@@ -1,4 +1,3 @@
-/* --- Styling Khusus Tabel Evadom --- */
 .col-dosen {
     width: 30%;
     text-align: left;
@@ -8,7 +7,6 @@
     width: 15%;
 }
 
-/* Badge Status Umum */
 .badge {
     padding: 6px 12px;
     border-radius: 20px;
@@ -17,7 +15,6 @@
     display: inline-block;
 }
 
-/* Warna diperhalus mengikuti warna pastel dashboard */
 .warning-bg {
     background-color: #fdf3d8;
     color: #e6a23c;
@@ -30,7 +27,6 @@
     border: 1px solid #e1f3d8;
 }
 
-/* Tombol Aksi Tabel */
 .btn-sm {
     padding: 8px 16px;
     border-radius: 8px;
@@ -41,7 +37,6 @@
     transition: all 0.3s ease;
 }
 
-/* --- Grid Kuesioner Kampus --- */
 .kuesioner-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -54,7 +49,7 @@
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border: 1px solid #eef2f7; /* Mengikuti border krs-card */
+    border: 1px solid #eef2f7; 
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -63,7 +58,7 @@
 
 .kuesioner-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(88, 164, 223, 0.1); /* Shadow soft blue */
+    box-shadow: 0 8px 20px rgba(88, 164, 223, 0.1); 
 }
 
 .kuesioner-icon {
@@ -76,7 +71,6 @@
     font-size: 1.5rem;
 }
 
-/* Mengikuti warna icon background di dashboard */
 .primary-icon { background-color: #e1effa; color: #58a4df; } 
 .success-icon { background-color: #e6f4ea; color: #52c41a; }
 
@@ -87,7 +81,7 @@
 .kuesioner-info h4 {
     margin: 0 0 8px 0;
     font-size: 1.1rem;
-    color: #333; /* Warna judul lebih kalem */
+    color: #333; 
 }
 
 .kuesioner-info p {
@@ -106,7 +100,7 @@
 }
 
 .deadline {
-    color: #f27a71; /* Warna coral dari dashboard */
+    color: #f27a71; 
     font-size: 0.85rem;
     font-weight: 600;
 }
@@ -120,7 +114,6 @@
     cursor: pointer;
 }
 
-/* Menyamakan dengan warna btn-primary di krs-khs.css */
 .btn-primary {
     background-color: #58a4df; 
     color: white;
